@@ -318,82 +318,176 @@ body {
 
 /* Solution Section */
 .solution {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1a2a3a 100%);
   color: var(--white);
 }
 
-.solution-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+.solution h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--white);
+  font-weight: 800;
 }
 
+.solution .section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+/* Solution Diagram */
 .solution-diagram {
   position: relative;
   text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.diagram-top, .diagram-middle, .diagram-bottom {
+.diagram-row {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 30px;
+  align-items: center;
+  margin-bottom: 20px;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-.diagram-top span, .diagram-middle span, .diagram-bottom span {
-  font-size: 0.95rem;
-  opacity: 0.9;
+.diagram-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.diagram-item:hover {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--accent-light);
+}
+
+.diagram-svg {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  color: rgba(255, 255, 255, 0.3);
+  left: 0;
+  right: 0;
+}
+
+.diagram-svg-top {
+  top: 50px;
+}
+
+.diagram-svg-bottom {
+  top: 180px;
 }
 
 .diagram-center {
-  margin: 40px 0;
+  position: relative;
+  margin: 80px 0 40px 0;
+  z-index: 3;
 }
 
-.diagram-center p {
+.diagram-quote {
   font-size: 1.2rem;
   font-style: italic;
-  margin-bottom: 20px;
-  opacity: 0.95;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.kesherat-link {
+.kesherat-link-box {
   background: var(--white);
   color: var(--primary-color);
-  padding: 30px;
-  border-radius: var(--border-radius);
-  margin: 20px 0;
+  padding: 40px 60px;
+  border-radius: 16px;
+  margin: 30px auto;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.kesherat-link h3 {
-  font-size: 2rem;
-  font-weight: 700;
+.kesherat-link-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(16, 185, 129, 0.2);
+}
+
+.kesherat-link-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.kesherat-link-main {
+  color: #0066cc;
+}
+
+.kesherat-link-sub {
+  color: #34d399;
+  margin-left: 5px;
+}
+
+.diagram-svg-center {
+  width: 2px;
+  height: 60px;
+  margin: 20px auto;
+  display: block;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .diagram-footer {
-  background: #0066cc;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  margin-top: 30px;
+  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  padding: 30px 40px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
 }
 
 .diagram-footer p {
   font-size: 1.1rem;
   font-weight: 600;
+  margin: 0;
+  color: var(--white);
 }
 
-.solution-text h2 {
-  font-size: 2rem;
+/* Solution Text */
+.solution-text {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.solution-text h3 {
+  font-size: 1.8rem;
   margin-bottom: 20px;
+  color: var(--accent-light);
+  font-weight: 700;
 }
 
 .solution-text p {
   font-size: 1rem;
-  margin-bottom: 20px;
-  opacity: 0.95;
-  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  line-height: 1.7;
 }
 
 .solution-text ul {
@@ -401,18 +495,21 @@ body {
 }
 
 .solution-text li {
-  padding: 10px 0;
-  padding-left: 30px;
+  padding: 12px 0;
+  padding-left: 35px;
   position: relative;
   font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.6;
 }
 
 .solution-text li:before {
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--accent-color);
+  color: var(--accent-light);
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* Features Section */
