@@ -48,7 +48,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="hero-subtitle">
-          Paving the way into the future of intelligent farming
+          We transform Hardware & Data in agents for the use of farmers
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-tagline">
