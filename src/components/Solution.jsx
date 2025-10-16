@@ -57,21 +57,27 @@ export default function Solution() {
             />
 
             {/* Connecting lines from each item to center */}
-            {/* Row 1 */}
-            <path d="M 250 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            {/* Row 1 - 5 items */}
+            <path d="M 150 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 350 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
             <path d="M 600 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
-            <path d="M 950 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 850 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 1050 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
 
-            {/* Row 2 */}
+            {/* Row 2 - 5 items */}
+            <path d="M 150 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
             <path d="M 350 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
             <path d="M 600 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
             <path d="M 850 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 1050 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
 
-            {/* Row 3 */}
-            <path d="M 250 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
-            <path d="M 450 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
-            <path d="M 750 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
-            <path d="M 950 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            {/* Row 3 - 6 items */}
+            <path d="M 100 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 280 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 460 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 640 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 820 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 1000 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
 
             {/* Arrow down from Kesherat box */}
             <path
@@ -100,34 +106,52 @@ export default function Solution() {
             <motion.div custom={2} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Harvester
             </motion.div>
+            <motion.div custom={3} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Soil Sensors
+            </motion.div>
+            <motion.div custom={4} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Weather Stations
+            </motion.div>
           </div>
 
           {/* Row 2 - Middle */}
           <div className="funnel-row funnel-row-2">
-            <motion.div custom={3} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={5} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Databases
             </motion.div>
-            <motion.div custom={4} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={6} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Autonomous tractor
             </motion.div>
-            <motion.div custom={5} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={7} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Robotics
+            </motion.div>
+            <motion.div custom={8} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Drones
+            </motion.div>
+            <motion.div custom={9} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Satellite Data
             </motion.div>
           </div>
 
           {/* Row 3 - Bottom */}
           <div className="funnel-row funnel-row-3">
-            <motion.div custom={6} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={10} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               AGV
             </motion.div>
-            <motion.div custom={7} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={11} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Picker
             </motion.div>
-            <motion.div custom={8} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={12} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Human knowledge
             </motion.div>
-            <motion.div custom={9} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+            <motion.div custom={13} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
               Smart Camera
+            </motion.div>
+            <motion.div custom={14} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              IoT Devices
+            </motion.div>
+            <motion.div custom={15} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              GPS Systems
             </motion.div>
           </div>
 
