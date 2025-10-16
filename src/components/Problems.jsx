@@ -5,39 +5,27 @@ export default function Problems() {
   const problems = [
     {
       id: 1,
-      title: 'Labor Shortage Crisis',
+      title: 'Labor Shortage',
       icon: '👥',
       color: '#FF6B6B',
-      points: [
-        '9.6 billion people by 2050',
-        '56% of farmers report labor issues',
-        '155,000 worker shortage in U.S. alone'
-      ],
-      description: 'Fewer young people are interested in farming while global food demand soars.'
+      stat: '56%',
+      description: 'Farmers report labor issues'
     },
     {
       id: 2,
-      title: 'Fragmented Technology',
+      title: 'Fragmented Tech',
       icon: '⚙️',
       color: '#4ECDC4',
-      points: [
-        'Different robots for different tasks',
-        'Incompatible platforms',
-        'Siloed data systems'
-      ],
-      description: 'Multiple systems that don\'t communicate, creating inefficiency and complexity.'
+      stat: '100+',
+      description: 'Incompatible systems per farm'
     },
     {
       id: 3,
       title: 'Intelligence Gap',
-      icon: 'ℹ️',
+      icon: '🧠',
       color: '#FFE66D',
-      points: [
-        'Manual coordination required',
-        'Limited autonomous decision-making',
-        'No unified control system'
-      ],
-      description: 'Robots and sensors everywhere, but they need more intelligence to work together.'
+      stat: '0%',
+      description: 'Autonomous coordination'
     }
   ]
 
@@ -70,11 +58,10 @@ export default function Problems() {
           viewport={{ once: true }}
         >
           <h2>The Challenge</h2>
-          <p className="section-subtitle">Three critical problems facing modern agriculture</p>
         </motion.div>
 
         <motion.div
-          className="problems-grid"
+          className="problems-grid-compact"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -83,21 +70,18 @@ export default function Problems() {
           {problems.map(problem => (
             <motion.div
               key={problem.id}
-              className="problem-card"
+              className="problem-card-compact"
               variants={cardVariants}
-              whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="problem-icon" style={{ color: problem.color }}>
+              <div className="problem-icon-compact" style={{ color: problem.color }}>
                 {problem.icon}
               </div>
+              <div className="problem-stat" style={{ color: problem.color }}>
+                {problem.stat}
+              </div>
               <h3>{problem.title}</h3>
-              <ul className="problem-points">
-                {problem.points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
-              <p className="problem-description">{problem.description}</p>
-              <div className="card-accent" style={{ backgroundColor: problem.color }}></div>
+              <p>{problem.description}</p>
             </motion.div>
           ))}
         </motion.div>

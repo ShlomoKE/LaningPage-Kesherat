@@ -6,38 +6,26 @@ export default function Features() {
     {
       id: 1,
       title: 'Agnostic Platform',
-      description: 'Works with any agricultural hardware and technology stack',
+      description: 'Works with any hardware',
       icon: '🔌'
     },
     {
       id: 2,
-      title: 'Manage All Your Tech',
-      description: 'Centralized control for all your agricultural systems and devices',
+      title: 'Unified Control',
+      description: 'Manage all tech in one place',
       icon: '🎛️'
     },
     {
       id: 3,
-      title: 'Intelligent Agents',
-      description: 'AI-powered autonomous agents that make smart decisions',
+      title: 'AI Agents',
+      description: 'Autonomous smart decisions',
       icon: '🤖'
     },
     {
       id: 4,
-      title: 'Real-time Monitoring',
-      description: 'Monitor your entire farm operation in real-time',
+      title: 'Real-time Data',
+      description: 'Live farm monitoring',
       icon: '📊'
-    },
-    {
-      id: 5,
-      title: 'Data Integration',
-      description: 'Seamlessly integrate data from all your sources',
-      icon: '🔗'
-    },
-    {
-      id: 6,
-      title: 'Scalable Solution',
-      description: 'Grows with your farm from small operations to large enterprises',
-      icon: '📈'
     }
   ]
 
@@ -70,11 +58,10 @@ export default function Features() {
           viewport={{ once: true }}
         >
           <h2>Why Kesherat</h2>
-          <p className="section-subtitle">Powerful features designed for modern agriculture</p>
         </motion.div>
 
         <motion.div
-          className="features-grid"
+          className="features-grid-compact"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -83,11 +70,11 @@ export default function Features() {
           {features.map(feature => (
             <motion.div
               key={feature.id}
-              className="feature-card"
+              className="feature-card-compact"
               variants={cardVariants}
-              whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(126, 200, 80, 0.15)' }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="feature-icon">{feature.icon}</div>
+              <div className="feature-icon-compact">{feature.icon}</div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </motion.div>
