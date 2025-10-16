@@ -205,6 +205,38 @@ body {
   }
 }
 
+.hero-title-agentic {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.gradient-text-large {
+  background: linear-gradient(135deg,
+    #10b981 0%,
+    #34d399 30%,
+    #6ee7b7 60%,
+    #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  filter: drop-shadow(0 0 30px rgba(16, 185, 129, 0.4));
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 30px rgba(16, 185, 129, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(16, 185, 129, 0.6));
+  }
+}
+
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 50px;
@@ -1439,6 +1471,11 @@ body {
     max-width: 500px;
   }
 
+  .hero-title-agentic {
+    font-size: 4rem;
+    letter-spacing: -1.5px;
+  }
+
   .problems-grid,
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1467,6 +1504,11 @@ body {
   .hero-title {
     font-size: 3rem;
     letter-spacing: -1px;
+  }
+
+  .hero-title-agentic {
+    font-size: 3.5rem;
+    letter-spacing: -1.5px;
   }
 
   .hero-logo {
@@ -1565,6 +1607,11 @@ body {
 
   .hero-title {
     font-size: 2.2rem;
+  }
+
+  .hero-title-agentic {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
   }
 
   .hero-logo {

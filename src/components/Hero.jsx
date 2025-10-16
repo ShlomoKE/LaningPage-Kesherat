@@ -35,10 +35,6 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="hero-badge">
-          <span>✨ The Future of Agriculture</span>
-        </motion.div>
-
         <motion.div variants={itemVariants} className="hero-logo-container">
           <img
             src="/KesheratLogo-HQ.png"
@@ -47,8 +43,12 @@ export default function Hero() {
           />
         </motion.div>
 
+        <motion.h1 variants={itemVariants} className="hero-title-agentic">
+          <span className="gradient-text-large">Agentic Agriculture</span>
+        </motion.h1>
+
         <motion.p variants={itemVariants} className="hero-subtitle">
-          Paving the way into <span className="gradient-text">agentic agriculture</span>
+          Paving the way into the future of intelligent farming
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-tagline">
