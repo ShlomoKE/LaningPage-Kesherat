@@ -2,24 +2,17 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 export default function Solution() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
   const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
+    hidden: { opacity: 0, y: -20 },
+    visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
-    },
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      },
+    }),
   }
 
   return (
@@ -35,101 +28,151 @@ export default function Solution() {
           <p className="section-subtitle">A neurological center for agriculture</p>
         </motion.div>
 
-        <motion.div
-          className="solution-diagram"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          {/* Top row - Irrigation systems, Software, Harvester */}
-          <motion.div
-            className="diagram-row diagram-row-top"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.span variants={itemVariants} className="diagram-item">Irrigation systems</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Software</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Harvester</motion.span>
-          </motion.div>
+        <div className="solution-funnel">
+          {/* SVG Funnel Lines */}
+          <svg className="funnel-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="rgba(99, 102, 241, 0.4)" />
+                <stop offset="100%" stopColor="rgba(16, 185, 129, 0.4)" />
+              </linearGradient>
+            </defs>
 
-          {/* Connecting line top */}
-          <svg className="diagram-svg diagram-svg-top" viewBox="0 0 800 100" preserveAspectRatio="none">
-            <path d="M 50 0 Q 50 50, 400 100" stroke="currentColor" strokeWidth="2" fill="none" />
-            <path d="M 750 0 Q 750 50, 400 100" stroke="currentColor" strokeWidth="2" fill="none" />
+            {/* Left funnel curve */}
+            <path
+              d="M 100 80 Q 80 80, 80 200 L 80 280 Q 80 350, 200 420 L 400 500"
+              stroke="url(#lineGradient)"
+              strokeWidth="2.5"
+              fill="none"
+              opacity="0.6"
+            />
+
+            {/* Right funnel curve */}
+            <path
+              d="M 1100 80 Q 1120 80, 1120 200 L 1120 280 Q 1120 350, 1000 420 L 800 500"
+              stroke="url(#lineGradient)"
+              strokeWidth="2.5"
+              fill="none"
+              opacity="0.6"
+            />
+
+            {/* Connecting lines from each item to center */}
+            {/* Row 1 */}
+            <path d="M 250 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 600 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 950 100 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+
+            {/* Row 2 */}
+            <path d="M 350 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 600 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 850 200 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+
+            {/* Row 3 */}
+            <path d="M 250 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 450 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 750 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+            <path d="M 950 300 L 600 480" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" fill="none" />
+
+            {/* Arrow down from Kesherat box */}
+            <path
+              d="M 600 650 L 600 720"
+              stroke="rgba(16, 185, 129, 0.5)"
+              strokeWidth="3"
+              fill="none"
+              markerEnd="url(#arrowhead)"
+            />
+
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="rgba(16, 185, 129, 0.5)" />
+              </marker>
+            </defs>
           </svg>
 
-          {/* Middle row - Databases, Autonomous tractor, Robotics */}
-          <motion.div
-            className="diagram-row diagram-row-middle"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+          {/* Row 1 - Top */}
+          <div className="funnel-row funnel-row-1">
+            <motion.div custom={0} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Irrigation systems
+            </motion.div>
+            <motion.div custom={1} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Software
+            </motion.div>
+            <motion.div custom={2} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Harvester
+            </motion.div>
+          </div>
+
+          {/* Row 2 - Middle */}
+          <div className="funnel-row funnel-row-2">
+            <motion.div custom={3} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Databases
+            </motion.div>
+            <motion.div custom={4} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Autonomous tractor
+            </motion.div>
+            <motion.div custom={5} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Robotics
+            </motion.div>
+          </div>
+
+          {/* Row 3 - Bottom */}
+          <div className="funnel-row funnel-row-3">
+            <motion.div custom={6} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              AGV
+            </motion.div>
+            <motion.div custom={7} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Picker
+            </motion.div>
+            <motion.div custom={8} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Human knowledge
+            </motion.div>
+            <motion.div custom={9} variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="funnel-item">
+              Smart Camera
+            </motion.div>
+          </div>
+
+          {/* Quote */}
+          <motion.p
+            className="funnel-quote"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.span variants={itemVariants} className="diagram-item">Databases</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Autonomous tractor</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Robotics</motion.span>
-          </motion.div>
+            "A neurological center for agriculture"
+          </motion.p>
 
-          {/* Bottom row - AGV, Picker, Human knowledge, Smart Camera */}
+          {/* Kesherat-Link Box */}
           <motion.div
-            className="diagram-row diagram-row-bottom"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.span variants={itemVariants} className="diagram-item">AGV</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Picker</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Human knowledge</motion.span>
-            <motion.span variants={itemVariants} className="diagram-item">Smart Camera</motion.span>
-          </motion.div>
-
-          {/* Connecting line bottom */}
-          <svg className="diagram-svg diagram-svg-bottom" viewBox="0 0 800 100" preserveAspectRatio="none">
-            <path d="M 100 0 Q 100 50, 400 100" stroke="currentColor" strokeWidth="2" fill="none" />
-            <path d="M 700 0 Q 700 50, 400 100" stroke="currentColor" strokeWidth="2" fill="none" />
-          </svg>
-
-          {/* Center section */}
-          <motion.div
-            className="diagram-center"
-            initial={{ opacity: 0, scale: 0.9 }}
+            className="kesherat-box"
+            initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.7, type: "spring" }}
+            viewport={{ once: true }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 40px 80px rgba(16, 185, 129, 0.3)',
+              transition: { duration: 0.3 }
+            }}
+          >
+            <img
+              src="/Kesherat-Link.png"
+              alt="Kesherat-Link"
+              className="kesherat-logo"
+            />
+          </motion.div>
+
+          {/* Bottom Result Box */}
+          <motion.div
+            className="result-box"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="diagram-quote">"A neurological center for agriculture"</p>
-
-            <motion.div
-              className="kesherat-link-box"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(16, 185, 129, 0.3)' }}
-            >
-              <h3 className="kesherat-link-title">
-                <span className="kesherat-link-main">Kesherat</span>
-                <span className="kesherat-link-sub">-Link</span>
-              </h3>
-            </motion.div>
-
-            {/* Connecting line down */}
-            <svg className="diagram-svg diagram-svg-center" viewBox="0 0 100 80" preserveAspectRatio="none">
-              <path d="M 50 0 L 50 80" stroke="currentColor" strokeWidth="2" fill="none" />
-            </svg>
-
-            <motion.div
-              className="diagram-footer"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <p>Transformation hardware & data, into agents</p>
-            </motion.div>
+            <p>Transformation hardware & data, into agents</p>
           </motion.div>
-        </motion.div>
+        </div>
 
         <motion.div
           className="solution-text"

@@ -39,9 +39,13 @@ export default function Hero() {
           <span>✨ The Future of Agriculture</span>
         </motion.div>
 
-        <motion.h1 variants={itemVariants} className="hero-title">
-          Kesherat
-        </motion.h1>
+        <motion.div variants={itemVariants} className="hero-logo-container">
+          <img
+            src="/KesheratLogo-HQ.png"
+            alt="Kesherat"
+            className="hero-logo"
+          />
+        </motion.div>
 
         <motion.p variants={itemVariants} className="hero-subtitle">
           Paving the way into <span className="gradient-text">agentic agriculture</span>
