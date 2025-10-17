@@ -23,7 +23,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero-background">
         <div className="gradient-orb gradient-orb-1"></div>
         <div className="gradient-orb gradient-orb-2"></div>

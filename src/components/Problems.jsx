@@ -49,7 +49,7 @@ export default function Problems() {
   }
 
   return (
-    <section className="problems">
+    <section className="problems" id="problems">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

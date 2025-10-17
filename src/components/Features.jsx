@@ -49,7 +49,7 @@ export default function Features() {
   }
 
   return (
-    <section className="features">
+    <section className="features" id="features">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

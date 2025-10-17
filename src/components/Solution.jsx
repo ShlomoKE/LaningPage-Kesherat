@@ -16,7 +16,7 @@ export default function Solution() {
   }
 
   return (
-    <section className="solution">
+    <section className="solution" id="solution">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
