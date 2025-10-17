@@ -55,7 +55,7 @@ export default function DemoForm() {
               <p>We've received your request. Our team will contact you within 24 hours to schedule your personalized demo.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="demo-form">
+            <form onSubmit={handleSubmit} className="demo-form" netlify>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
