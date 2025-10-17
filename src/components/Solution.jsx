@@ -1,7 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 export default function Solution() {
+  const { language } = useLanguage()
+  const t = translations[language].solution
   const itemVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: (i) => ({
@@ -24,8 +28,8 @@ export default function Solution() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>The Solution: Kesherat-Link</h2>
-          <p className="section-subtitle">A neurological center for agriculture</p>
+          <h2>{t.title}</h2>
+          <p className="section-subtitle">{t.subtitle}</p>
         </motion.div>
 
         <div className="solution-content">
@@ -206,13 +210,12 @@ export default function Solution() {
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3>How It Works</h3>
-            <p>A neurological center that connects all agricultural hardware and data into intelligent, autonomous agents.</p>
+            <h3>{t.howItWorks}</h3>
+            <p>{t.description}</p>
             <ul>
-              <li>Unified platform for all agricultural systems</li>
-              <li>Intelligent coordination between devices</li>
-              <li>Real-time data integration and analysis</li>
-              <li>Autonomous decision-making capabilities</li>
+              {t.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
           </motion.div>
         </div>

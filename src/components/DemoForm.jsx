@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 export default function DemoForm() {
+  const { language } = useLanguage()
+  const t = translations[language].demo
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -60,8 +64,8 @@ export default function DemoForm() {
   const whyFeatures = [
     {
       id: 1,
-      title: 'Agnostic Platform',
-      description: 'Works with any hardware',
+      title: t.why.features.agnostic.title,
+      description: t.why.features.agnostic.description,
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
@@ -71,8 +75,8 @@ export default function DemoForm() {
     },
     {
       id: 2,
-      title: 'Unified Control',
-      description: 'Manage all tech in one place',
+      title: t.why.features.unified.title,
+      description: t.why.features.unified.description,
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="3"/>
@@ -83,8 +87,8 @@ export default function DemoForm() {
     },
     {
       id: 3,
-      title: 'AI Agents',
-      description: 'Autonomous smart decisions',
+      title: t.why.features.ai.title,
+      description: t.why.features.ai.description,
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="3" y="11" width="18" height="10" rx="2"/>
@@ -97,8 +101,8 @@ export default function DemoForm() {
     },
     {
       id: 4,
-      title: 'Real-time Data',
-      description: 'Live farm monitoring',
+      title: t.why.features.realtime.title,
+      description: t.why.features.realtime.description,
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <line x1="18" y1="20" x2="18" y2="10"/>
@@ -113,8 +117,8 @@ export default function DemoForm() {
     <section className="demo-form-section" id="demo-form">
       <div className="container">
         <div className="demo-form-header">
-          <h2>Request a Demo</h2>
-          <p>See how Kesherat can transform your agricultural operations into an intelligent, autonomous system</p>
+          <h2>{t.title}</h2>
+          <p>{t.subtitle}</p>
         </div>
 
         <div className="demo-two-column">
@@ -122,8 +126,8 @@ export default function DemoForm() {
             {submitted ? (
               <div className="form-success">
                 <div className="success-icon">✓</div>
-                <h3>Thank You!</h3>
-                <p>We've received your request. Our team will contact you within 24 hours to schedule your personalized demo.</p>
+                <h3>{t.success.title}</h3>
+                <p>{t.success.message}</p>
               </div>
             ) : (
               <form
@@ -137,7 +141,7 @@ export default function DemoForm() {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="name">Full Name *</label>
+                  <label htmlFor="name">{t.form.name} {t.form.required}</label>
                   <input
                     type="text"
                     id="name"
@@ -145,12 +149,12 @@ export default function DemoForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="John Doe"
+                    placeholder={t.form.placeholders.name}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email *</label>
+                  <label htmlFor="email">{t.form.email} {t.form.required}</label>
                   <input
                     type="email"
                     id="email"
@@ -158,14 +162,14 @@ export default function DemoForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="john@example.com"
+                    placeholder={t.form.placeholders.email}
                   />
                 </div>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="company">Company/Farm Name *</label>
+                  <label htmlFor="company">{t.form.company} {t.form.required}</label>
                   <input
                     type="text"
                     id="company"
@@ -173,65 +177,65 @@ export default function DemoForm() {
                     value={formData.company}
                     onChange={handleChange}
                     required
-                    placeholder="Your Farm Name"
+                    placeholder={t.form.placeholders.company}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
+                  <label htmlFor="phone">{t.form.phone}</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder={t.form.placeholders.phone}
                   />
                 </div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="farmSize">Farm Size (hectares)</label>
+                <label htmlFor="farmSize">{t.form.farmSize}</label>
                 <select
                   id="farmSize"
                   name="farmSize"
                   value={formData.farmSize}
                   onChange={handleChange}
                 >
-                  <option value="">Select farm size</option>
-                  <option value="0-50">0-50 hectares</option>
-                  <option value="50-200">50-200 hectares</option>
-                  <option value="200-500">200-500 hectares</option>
-                  <option value="500+">500+ hectares</option>
+                  <option value="">{t.form.farmSizeOptions.select}</option>
+                  <option value="0-50">{t.form.farmSizeOptions.small}</option>
+                  <option value="50-200">{t.form.farmSizeOptions.medium}</option>
+                  <option value="200-500">{t.form.farmSizeOptions.large}</option>
+                  <option value="500+">{t.form.farmSizeOptions.xlarge}</option>
                 </select>
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Tell us about your needs</label>
+                <label htmlFor="message">{t.form.message}</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  placeholder="What challenges are you facing? What technologies do you currently use?"
+                  placeholder={t.form.placeholders.message}
                 ></textarea>
               </div>
 
               <button type="submit" className="form-submit-btn">
-                Request Demo
+                {t.form.submit}
                 <span className="btn-arrow">→</span>
               </button>
 
               <p className="form-privacy">
-                By submitting this form, you agree to our Privacy Policy. We'll only use your information to schedule your demo.
+                {t.form.privacy}
               </p>
             </form>
           )}
           </div>
 
           <div className="demo-why-section">
-            <h3>Why Kesherat</h3>
+            <h3>{t.why.title}</h3>
             <div className="why-features-list">
               {whyFeatures.map(feature => (
                 <div key={feature.id} className="why-feature-item">

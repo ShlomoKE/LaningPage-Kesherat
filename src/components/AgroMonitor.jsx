@@ -1,7 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 export default function AgroMonitor() {
+  const { language } = useLanguage()
+  const t = translations[language].agromonitor
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,26 +29,26 @@ export default function AgroMonitor() {
   const agentExamples = [
     {
       icon: '🌡️',
-      title: 'Soil Sensors',
-      description: 'Analyze humidity, pH & nutrients',
+      title: t.agents.soilSensors.title,
+      description: t.agents.soilSensors.description,
       color: '#10b981'
     },
     {
       icon: '🛰️',
-      title: 'Satellite Data',
-      description: 'Monitor crops & predict yields',
+      title: t.agents.satelliteData.title,
+      description: t.agents.satelliteData.description,
       color: '#3b82f6'
     },
     {
       icon: '🚜',
-      title: 'Machinery',
-      description: 'Optimize routes & maintenance',
+      title: t.agents.machinery.title,
+      description: t.agents.machinery.description,
       color: '#f59e0b'
     },
     {
       icon: '☁️',
-      title: 'Weather Stations',
-      description: 'Predict conditions & alerts',
+      title: t.agents.weatherStations.title,
+      description: t.agents.weatherStations.description,
       color: '#8b5cf6'
     }
   ]
@@ -59,9 +63,9 @@ export default function AgroMonitor() {
         viewport={{ once: true, margin: "-100px" }}
       >
         <motion.div variants={itemVariants} className="agromonitor-header">
-          <h2>AgroMonitor</h2>
+          <h2>{t.title}</h2>
           <p className="section-subtitle">
-            Transform hardware into <span className="highlight-text">intelligent agents</span>
+            {t.subtitle}
           </p>
         </motion.div>
 
@@ -91,12 +95,12 @@ export default function AgroMonitor() {
             <motion.div variants={itemVariants} className="agromonitor-platform-compact">
               <div className="platform-features-visual-compact">
                 <div className="feature-image-card-compact">
-                  <img src="/AICopilot.png" alt="AI Copilot" />
-                  <h4>🤖 AI Copilot</h4>
+                  <img src="/AICopilot.png" alt={t.platform.aiCopilot} />
+                  <h4>🤖 {t.platform.aiCopilot}</h4>
                 </div>
                 <div className="feature-image-card-compact">
-                  <img src="/Task.png" alt="Task Management" />
-                  <h4>✅ Task Management</h4>
+                  <img src="/Task.png" alt={t.platform.taskManagement} />
+                  <h4>✅ {t.platform.taskManagement}</h4>
                 </div>
               </div>
             </motion.div>
