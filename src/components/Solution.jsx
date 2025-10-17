@@ -28,7 +28,8 @@ export default function Solution() {
           <p className="section-subtitle">A neurological center for agriculture</p>
         </motion.div>
 
-        <div className="solution-funnel">
+        <div className="solution-content">
+          <div className="solution-funnel">
           {/* SVG Funnel Lines */}
           <svg className="funnel-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
             <defs>
@@ -196,24 +197,25 @@ export default function Solution() {
           >
             <p>Transformation hardware & data, into agents</p>
           </motion.div>
-        </div>
+          </div>
 
-        <motion.div
-          className="solution-text"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3>How It Works</h3>
-          <p>A neurological center that connects all agricultural hardware and data into intelligent, autonomous agents.</p>
-          <ul>
-            <li>Unified platform for all agricultural systems</li>
-            <li>Intelligent coordination between devices</li>
-            <li>Real-time data integration and analysis</li>
-            <li>Autonomous decision-making capabilities</li>
-          </ul>
-        </motion.div>
+          <motion.div
+            className="solution-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3>How It Works</h3>
+            <p>A neurological center that connects all agricultural hardware and data into intelligent, autonomous agents.</p>
+            <ul>
+              <li>Unified platform for all agricultural systems</li>
+              <li>Intelligent coordination between devices</li>
+              <li>Real-time data integration and analysis</li>
+              <li>Autonomous decision-making capabilities</li>
+            </ul>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
