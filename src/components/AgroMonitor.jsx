@@ -65,46 +65,54 @@ export default function AgroMonitor() {
           </p>
         </motion.div>
 
-        <motion.div
-          className="agents-grid-compact"
-          variants={containerVariants}
-        >
-          {agentExamples.map((agent, index) => (
+        <div className="agromonitor-two-column">
+          {/* Left Column: Agent Cards */}
+          <div className="agromonitor-left">
             <motion.div
-              key={index}
-              className="agent-card-compact"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
+              className="agents-grid-compact"
+              variants={containerVariants}
             >
-              <div className="agent-icon-compact" style={{ color: agent.color }}>
-                {agent.icon}
-              </div>
-              <h4>{agent.title}</h4>
-              <p>{agent.description}</p>
+              {agentExamples.map((agent, index) => (
+                <motion.div
+                  key={index}
+                  className="agent-card-compact"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="agent-icon-compact" style={{ color: agent.color }}>
+                    {agent.icon}
+                  </div>
+                  <h4>{agent.title}</h4>
+                  <p>{agent.description}</p>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
 
-        <motion.div variants={itemVariants} className="agromonitor-main-visual">
-          <img
-            src="/AgromonitorViewPC.png"
-            alt="AgroMonitor Dashboard"
-            className="agromonitor-screenshot"
-          />
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="agromonitor-platform-compact">
-          <div className="platform-features-visual-compact">
-            <div className="feature-image-card-compact">
-              <img src="/AICopilot.png" alt="AI Copilot" />
-              <h4>🤖 AI Copilot</h4>
-            </div>
-            <div className="feature-image-card-compact">
-              <img src="/Task.png" alt="Task Management" />
-              <h4>✅ Task Management</h4>
-            </div>
+            <motion.div variants={itemVariants} className="agromonitor-platform-compact">
+              <div className="platform-features-visual-compact">
+                <div className="feature-image-card-compact">
+                  <img src="/AICopilot.png" alt="AI Copilot" />
+                  <h4>🤖 AI Copilot</h4>
+                </div>
+                <div className="feature-image-card-compact">
+                  <img src="/Task.png" alt="Task Management" />
+                  <h4>✅ Task Management</h4>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+
+          {/* Right Column: Main Visual */}
+          <motion.div variants={itemVariants} className="agromonitor-right">
+            <div className="agromonitor-main-visual">
+              <img
+                src="/AgromonitorViewPC.png"
+                alt="AgroMonitor Dashboard"
+                className="agromonitor-screenshot"
+              />
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   )
