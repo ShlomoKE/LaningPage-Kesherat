@@ -6,6 +6,8 @@ export const translations = {
       problems: 'Problems',
       solution: 'Solution',
       agromonitor: 'AgroMonitor',
+      kesheratLink: 'Kesherat Link',
+      aboutUs: 'About Us',
       requestDemo: 'Request Demo'
     },
     
@@ -170,6 +172,73 @@ export const translations = {
         cookies: 'Cookies'
       },
       copyright: '© 2024 Kesherat. All rights reserved.'
+    },
+
+    // Kesherat Link
+    kesheratLink: {
+      title: 'Kesherat-Link',
+      subtitle: 'The neurological center of your farm',
+      description: 'Kesherat-Link is our flagship platform that acts as the central nervous system connecting all your agricultural hardware and data sources into one unified intelligent system.',
+      features: {
+        title: 'Key Features',
+        items: [
+          'Universal hardware compatibility',
+          'Real-time data synchronization',
+          'AI-powered decision making',
+          'Automated task management',
+          'Predictive analytics',
+          'Cloud-based infrastructure'
+        ]
+      },
+      benefits: {
+        title: 'Benefits',
+        items: [
+          'Reduce operational costs by up to 30%',
+          'Increase crop yields through data-driven insights',
+          'Save time with automated workflows',
+          'Make informed decisions with real-time data',
+          'Scale your operations effortlessly'
+        ]
+      }
+    },
+
+    // About Us
+    aboutUs: {
+      title: 'About Kesherat',
+      subtitle: 'Pioneering the future of agriculture',
+      mission: {
+        title: 'Our Mission',
+        description: 'To empower farmers worldwide by transforming fragmented agricultural technology into intelligent, unified systems that drive sustainable and profitable farming.'
+      },
+      vision: {
+        title: 'Our Vision',
+        description: 'A world where every farm, regardless of size, has access to cutting-edge AI-powered agricultural intelligence that maximizes productivity while preserving our planet.'
+      },
+      values: {
+        title: 'Our Values',
+        items: [
+          {
+            title: 'Innovation',
+            description: 'Constantly pushing the boundaries of agricultural technology'
+          },
+          {
+            title: 'Sustainability',
+            description: 'Building solutions that benefit both farmers and the environment'
+          },
+          {
+            title: 'Accessibility',
+            description: 'Making advanced technology available to all farmers'
+          },
+          {
+            title: 'Collaboration',
+            description: 'Working together with farmers to create real solutions'
+          }
+        ]
+      },
+      team: {
+        title: 'Our Team',
+        description: 'A diverse group of agricultural experts, AI engineers, and sustainability advocates dedicated to revolutionizing farming.'
+      }
     }
   },
   
@@ -180,6 +249,8 @@ export const translations = {
       problems: 'Problemas',
       solution: 'Solución',
       agromonitor: 'AgroMonitor',
+      kesheratLink: 'Kesherat Link',
+      aboutUs: 'Sobre Nosotros',
       requestDemo: 'Solicitar Demo'
     },
     
@@ -344,6 +415,73 @@ export const translations = {
         cookies: 'Cookies'
       },
       copyright: '© 2024 Kesherat. Todos los derechos reservados.'
+    },
+
+    // Kesherat Link
+    kesheratLink: {
+      title: 'Kesherat-Link',
+      subtitle: 'El centro neurológico de tu granja',
+      description: 'Kesherat-Link es nuestra plataforma insignia que actúa como el sistema nervioso central conectando todo tu hardware agrícola y fuentes de datos en un sistema inteligente unificado.',
+      features: {
+        title: 'Características Clave',
+        items: [
+          'Compatibilidad universal con hardware',
+          'Sincronización de datos en tiempo real',
+          'Toma de decisiones impulsada por IA',
+          'Gestión automatizada de tareas',
+          'Análisis predictivo',
+          'Infraestructura basada en la nube'
+        ]
+      },
+      benefits: {
+        title: 'Beneficios',
+        items: [
+          'Reduce costos operativos hasta un 30%',
+          'Aumenta rendimientos de cultivos con insights basados en datos',
+          'Ahorra tiempo con flujos de trabajo automatizados',
+          'Toma decisiones informadas con datos en tiempo real',
+          'Escala tus operaciones sin esfuerzo'
+        ]
+      }
+    },
+
+    // About Us
+    aboutUs: {
+      title: 'Sobre Kesherat',
+      subtitle: 'Pioneros del futuro de la agricultura',
+      mission: {
+        title: 'Nuestra Misión',
+        description: 'Empoderar a agricultores en todo el mundo transformando la tecnología agrícola fragmentada en sistemas inteligentes y unificados que impulsan una agricultura sostenible y rentable.'
+      },
+      vision: {
+        title: 'Nuestra Visión',
+        description: 'Un mundo donde cada granja, sin importar su tamaño, tenga acceso a inteligencia agrícola de vanguardia impulsada por IA que maximice la productividad mientras preserva nuestro planeta.'
+      },
+      values: {
+        title: 'Nuestros Valores',
+        items: [
+          {
+            title: 'Innovación',
+            description: 'Constantemente empujando los límites de la tecnología agrícola'
+          },
+          {
+            title: 'Sostenibilidad',
+            description: 'Construyendo soluciones que benefician tanto a agricultores como al medio ambiente'
+          },
+          {
+            title: 'Accesibilidad',
+            description: 'Haciendo la tecnología avanzada disponible para todos los agricultores'
+          },
+          {
+            title: 'Colaboración',
+            description: 'Trabajando junto a agricultores para crear soluciones reales'
+          }
+        ]
+      },
+      team: {
+        title: 'Nuestro Equipo',
+        description: 'Un grupo diverso de expertos agrícolas, ingenieros de IA y defensores de la sostenibilidad dedicados a revolucionar la agricultura.'
+      }
     }
   }
 }

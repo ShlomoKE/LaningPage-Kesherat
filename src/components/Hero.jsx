@@ -48,8 +48,25 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-buttons">
-          <button className="cta-button primary">{t.buttons.getStarted}</button>
-          <button className="cta-button secondary">{t.buttons.learnMore}</button>
+          <button
+            className="cta-button primary"
+            onClick={() => {
+              const demoSection = document.getElementById('demo')
+              if (demoSection) {
+                demoSection.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
+          >
+            {t.buttons.getStarted}
+          </button>
+          <button
+            className="cta-button secondary"
+            onClick={() => {
+              window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
+            }}
+          >
+            {t.buttons.learnMore}
+          </button>
         </motion.div>
       </motion.div>
 
