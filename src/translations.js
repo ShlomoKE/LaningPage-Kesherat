@@ -91,23 +91,24 @@ export const translations = {
     // AgroMonitor
     agromonitor: {
       title: 'AgroMonitor',
-      subtitle: 'Transform hardware into intelligent agents',
+      subtitle: 'Your command center for intelligent farm agents',
+      description: 'AgroMonitor is where you interact with and manage all your farm agents. Any connected hardware - sensors, machinery, drones, weather stations, cameras - becomes an intelligent agent you can communicate with, assign tasks to, and coordinate through one unified platform.',
       agents: {
-        soilSensors: {
-          title: 'Soil Sensors',
-          description: 'Analyze humidity, pH & nutrients'
-        },
-        satelliteData: {
-          title: 'Satellite Data',
-          description: 'Monitor crop health from space'
+        sensors: {
+          title: 'IoT Sensors',
+          description: 'Monitor and control soil, climate, and water sensors as agents'
         },
         machinery: {
-          title: 'Machinery',
-          description: 'Track equipment & optimize usage'
+          title: 'Farm Equipment',
+          description: 'Command tractors, harvesters, and irrigation systems'
         },
-        weatherStations: {
-          title: 'Weather Stations',
-          description: 'Predict conditions & plan ahead'
+        drones: {
+          title: 'Drones & Cameras',
+          description: 'Deploy aerial monitoring and computer vision agents'
+        },
+        external: {
+          title: 'External Data',
+          description: 'Integrate weather, satellite, and market data agents'
         }
       },
       platform: {
@@ -356,23 +357,24 @@ export const translations = {
     // AgroMonitor
     agromonitor: {
       title: 'AgroMonitor',
-      subtitle: 'Transforma hardware en agentes inteligentes',
+      subtitle: 'Tu centro de comando para agentes agrícolas inteligentes',
+      description: 'AgroMonitor es donde interactúas y gestionas todos tus agentes agrícolas. Cualquier hardware conectado - sensores, maquinaria, drones, estaciones meteorológicas, cámaras - se convierte en un agente inteligente con el que puedes comunicarte, asignar tareas y coordinar a través de una plataforma unificada.',
       agents: {
-        soilSensors: {
-          title: 'Sensores de Suelo',
-          description: 'Analiza humedad, pH y nutrientes'
-        },
-        satelliteData: {
-          title: 'Datos Satelitales',
-          description: 'Monitorea salud de cultivos desde el espacio'
+        sensors: {
+          title: 'Sensores IoT',
+          description: 'Monitorea y controla sensores de suelo, clima y agua como agentes'
         },
         machinery: {
-          title: 'Maquinaria',
-          description: 'Rastrea equipos y optimiza uso'
+          title: 'Equipos Agrícolas',
+          description: 'Comanda tractores, cosechadoras y sistemas de riego'
         },
-        weatherStations: {
-          title: 'Estaciones Meteorológicas',
-          description: 'Predice condiciones y planifica'
+        drones: {
+          title: 'Drones y Cámaras',
+          description: 'Despliega agentes de monitoreo aéreo y visión computacional'
+        },
+        external: {
+          title: 'Datos Externos',
+          description: 'Integra agentes de datos meteorológicos, satelitales y de mercado'
         }
       },
       platform: {

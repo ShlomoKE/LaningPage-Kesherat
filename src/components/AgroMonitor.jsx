@@ -28,27 +28,53 @@ export default function AgroMonitor() {
 
   const agentExamples = [
     {
-      icon: '🌡️',
-      title: t.agents.soilSensors.title,
-      description: t.agents.soilSensors.description,
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="2"/>
+          <path d="M12 1v6m0 6v6M1 12h6m6 0h6"/>
+          <circle cx="12" cy="12" r="10"/>
+        </svg>
+      ),
+      title: t.agents.sensors.title,
+      description: t.agents.sensors.description,
       color: '#10b981'
     },
     {
-      icon: '🛰️',
-      title: t.agents.satelliteData.title,
-      description: t.agents.satelliteData.description,
-      color: '#3b82f6'
-    },
-    {
-      icon: '🚜',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="11" width="18" height="10" rx="2"/>
+          <circle cx="8" cy="16" r="2"/>
+          <circle cx="16" cy="16" r="2"/>
+          <path d="M18 11V8a2 2 0 0 0-2-2h-3"/>
+          <path d="M5 11V6a1 1 0 0 1 1-1h4"/>
+        </svg>
+      ),
       title: t.agents.machinery.title,
       description: t.agents.machinery.description,
       color: '#f59e0b'
     },
     {
-      icon: '☁️',
-      title: t.agents.weatherStations.title,
-      description: t.agents.weatherStations.description,
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+      ),
+      title: t.agents.drones.title,
+      description: t.agents.drones.description,
+      color: '#3b82f6'
+    },
+    {
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      ),
+      title: t.agents.external.title,
+      description: t.agents.external.description,
       color: '#8b5cf6'
     }
   ]
@@ -67,23 +93,26 @@ export default function AgroMonitor() {
           <p className="section-subtitle">
             {t.subtitle}
           </p>
+          <p className="agromonitor-description">
+            {t.description}
+          </p>
         </motion.div>
 
         <div className="agromonitor-two-column">
-          {/* Left Column: Agent Cards */}
+          {/* Left Column: Agent Cards + Platform Features */}
           <div className="agromonitor-left">
             <motion.div
-              className="agents-grid-compact"
+              className="agents-grid-professional"
               variants={containerVariants}
             >
               {agentExamples.map((agent, index) => (
                 <motion.div
                   key={index}
-                  className="agent-card-compact"
+                  className="agent-card-professional"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="agent-icon-compact" style={{ color: agent.color }}>
+                  <div className="agent-icon-professional" style={{ color: agent.color }}>
                     {agent.icon}
                   </div>
                   <h4>{agent.title}</h4>
@@ -92,15 +121,15 @@ export default function AgroMonitor() {
               ))}
             </motion.div>
 
-            <motion.div variants={itemVariants} className="agromonitor-platform-compact">
-              <div className="platform-features-visual-compact">
-                <div className="feature-image-card-compact">
+            <motion.div variants={itemVariants} className="agromonitor-platform-features">
+              <div className="platform-features-grid">
+                <div className="feature-card-professional">
                   <img src="/AICopilot.png" alt={t.platform.aiCopilot} />
-                  <h4>🤖 {t.platform.aiCopilot}</h4>
+                  <h4>{t.platform.aiCopilot}</h4>
                 </div>
-                <div className="feature-image-card-compact">
+                <div className="feature-card-professional">
                   <img src="/Task.png" alt={t.platform.taskManagement} />
-                  <h4>✅ {t.platform.taskManagement}</h4>
+                  <h4>{t.platform.taskManagement}</h4>
                 </div>
               </div>
             </motion.div>

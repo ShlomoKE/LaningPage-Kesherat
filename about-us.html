@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Kesherat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #1a1f36;
+      --secondary-color: #2d3748;
+      --accent-color: #2563eb;
+      --accent-light: #3b82f6;
+      --text-color: #1a202c;
+      --text-light: #4a5568;
+      --bg-light: #f7fafc;
+      --bg-dark: #0f1419;
+      --white: #ffffff;
+      --border-radius: 8px;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Navbar - Exact copy from main site */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 20, 25, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(15, 20, 25, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-logo-img {
+      height: 65px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3));
+      transition: all 0.3s ease;
+      animation: logoGlow 3s ease-in-out infinite;
+    }
+
+    .navbar-logo-img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.5));
+    }
+
+    @keyframes logoGlow {
+      0%, 100% {
+        filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3));
+      }
+      50% {
+        filter: drop-shadow(0 4px 16px rgba(37, 99, 235, 0.6));
+      }
+    }
+
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .navbar-menu li {
+      position: relative;
+    }
+
+    .navbar-menu li a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .navbar-menu li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-light);
+      transition: width 0.3s ease;
+    }
+
+    .navbar-menu li a:hover {
+      color: var(--white);
+    }
+
+    .navbar-menu li a:hover::after {
+      width: 100%;
+    }
+
+    .navbar-menu li a.nav-cta {
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+      padding: 10px 24px;
+      border-radius: 6px;
+      color: var(--white);
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .navbar-menu li a.nav-cta::after {
+      display: none;
+    }
+
+    .navbar-menu li a.nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .language-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .language-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 60px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .section p {
+      color: #475569;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      border-radius: 15px;
+      padding: 30px;
+      border: 2px solid rgba(59, 130, 246, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #3b82f6;
+    }
+
+    .card p {
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .mv-card {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border-radius: 15px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    }
+
+    .mv-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .mv-card p {
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.8;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      border-left: 4px solid #3b82f6;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+    }
+
+    .value-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+
+    .value-card p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .team-section {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .team-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .team-section p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #475569;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 40px;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .navbar-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 20, 25, 0.98);
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-menu.open {
+        transform: translateX(0);
+      }
+
+      .navbar-menu li a.nav-cta {
+        display: inline-block;
+      }
+    }
+
+    /* Content spacing for fixed navbar */
+    @media (max-width: 768px) {
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: 25px;
+      }
+
+      .grid, .mission-vision, .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="/">
+          <img src="/KesheratLogo.png" alt="Kesherat" class="navbar-logo-img">
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#problems">Problems</a></li>
+        <li><a href="/#solution">Solution</a></li>
+        <li><a href="/#agromonitor">AgroMonitor</a></li>
+        <li><a href="/kesherat-link.html">Kesherat Link</a></li>
+        <li><a href="/about-us.html">About Us</a></li>
+        <li><a href="/#demo-form" class="nav-cta">Request Demo</a></li>
+        <li>
+          <button class="language-toggle">
+            🇪🇸 ES
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+
+    mobileMenuToggle.addEventListener('click', function() {
+      navbarMenu.classList.toggle('open');
+    });
+  </script>
+
+  <div class="container">
+    <div class="header">
+      <h1>About Kesherat</h1>
+      <p class="tagline">Paving the way into agentic agriculture</p>
+      <p class="description">
+        We're on a mission to revolutionize agriculture by bridging the gap between traditional farming and cutting-edge AI technology. Kesherat empowers farmers to transform their operations into intelligent, autonomous systems.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🌱 Our Story</h2>
+      <p>
+        Kesherat was born from a simple observation: modern farms are drowning in technology that doesn't talk to each other. Farmers invest in sensors, machinery, and software, but spend more time managing these tools than actually farming. We knew there had to be a better way.
+      </p>
+      <br>
+      <p>
+        Our founders, with backgrounds in AI, agriculture, and systems engineering, came together to create a platform that would finally make agricultural technology work <em>for</em> farmers, not against them. The result is Kesherat - a platform that turns any farm equipment into intelligent agents that coordinate autonomously.
+      </p>
+    </div>
+
+    <div class="mission-vision">
+      <div class="mv-card">
+        <h3>🎯 Our Mission</h3>
+        <p>
+          To democratize advanced AI technology for agriculture, making it accessible and practical for farms of all sizes. We believe every farmer deserves the power of intelligent automation, regardless of their technical expertise or budget.
+        </p>
+      </div>
+      <div class="mv-card">
+        <h3>🔭 Our Vision</h3>
+        <p>
+          A future where farms operate as coordinated networks of intelligent agents, where farmers focus on strategy and stewardship while AI handles the complexity of day-to-day operations. Agriculture that's sustainable, efficient, and profitable.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>💎 Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h4>🚀 Innovation</h4>
+          <p>We push the boundaries of what's possible in agricultural technology, always seeking better solutions.</p>
+        </div>
+        <div class="value-card">
+          <h4>🌍 Sustainability</h4>
+          <p>Technology should help farms become more sustainable, not just more productive.</p>
+        </div>
+        <div class="value-card">
+          <h4>🤝 Accessibility</h4>
+          <p>Advanced technology should be easy to use and affordable for all farmers.</p>
+        </div>
+        <div class="value-card">
+          <h4>🔗 Collaboration</h4>
+          <p>We work closely with farmers, agronomists, and technology partners to build solutions that truly work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <h2>👥 Our Team</h2>
+      <p>
+        We're a diverse team of engineers, data scientists, agronomists, and farmers united by a passion for transforming agriculture. Our team combines deep expertise in AI and machine learning with real-world farming experience, ensuring our solutions are both technically advanced and practically useful.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🌟 Why Choose Kesherat?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Farmer-First Design</h3>
+          <p>Every feature is designed with farmers in mind. We prioritize simplicity and practicality over complexity.</p>
+        </div>
+        <div class="card">
+          <h3>Proven Technology</h3>
+          <p>Our AI agents are built on cutting-edge research and tested in real-world farming conditions.</p>
+        </div>
+        <div class="card">
+          <h3>Continuous Support</h3>
+          <p>We're with you every step of the way, from installation to optimization and beyond.</p>
+        </div>
+        <div class="card">
+          <h3>Growing Community</h3>
+          <p>Join a network of innovative farmers who are shaping the future of agriculture together.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="/" class="back-button">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -46,8 +46,8 @@ export default function Navbar() {
           <li><a onClick={() => scrollToSection('problems')}>{t.problems}</a></li>
           <li><a onClick={() => scrollToSection('solution')}>{t.solution}</a></li>
           <li><a onClick={() => scrollToSection('agromonitor')}>{t.agromonitor}</a></li>
-          <li><a href="/kesherat-link.html" target="_blank">{t.kesheratLink}</a></li>
-          <li><a href="/about-us.html" target="_blank">{t.aboutUs}</a></li>
+          <li><a href="/kesherat-link.html">{t.kesheratLink}</a></li>
+          <li><a href="/about-us.html">{t.aboutUs}</a></li>
           <li><a onClick={() => scrollToSection('demo-form')} className="nav-cta">{t.requestDemo}</a></li>
           <li>
             <button onClick={toggleLanguage} className="language-toggle" aria-label="Toggle language">

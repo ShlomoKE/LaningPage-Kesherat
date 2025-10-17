@@ -104,6 +104,10 @@ body {
   align-items: center;
 }
 
+.navbar-menu li {
+  position: relative;
+}
+
 .navbar-menu li a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
@@ -445,60 +449,43 @@ body {
 
 
 
-/* Agent Messages */
-.agent-messages-container {
+/* Typewriter Effect */
+.typewriter-container {
+  min-height: 80px;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 700px;
+  align-items: center;
+  justify-content: center;
   margin: 40px auto;
+  max-width: 800px;
   padding: 0 20px;
 }
 
-.agent-message {
-  background: linear-gradient(135deg,
-    rgba(59, 130, 246, 0.1) 0%,
-    rgba(16, 185, 129, 0.1) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-left: 4px solid #3b82f6;
-  border-radius: 12px;
-  padding: 16px 20px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.agent-message:hover {
-  transform: translateX(5px);
-  border-left-color: #10b981;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
-}
-
-.agent-message-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.agent-icon {
-  font-size: 1.2rem;
-  filter: grayscale(0.3);
-}
-
-.agent-name {
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.agent-task {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  padding-left: 32px;
+.typewriter-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-align: center;
   font-style: italic;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }
 
 .hero-buttons {
@@ -1339,7 +1326,18 @@ body {
   text-align: center;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 35px;
+  margin-bottom: 15px;
+}
+
+.agromonitor-description {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  font-weight: 400;
 }
 
 .highlight-text {
@@ -1653,7 +1651,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* Two Column Layout for AgroMonitor */
+/* Professional AgroMonitor Layout - Two Column */
 .agromonitor-two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1666,14 +1664,116 @@ body {
 .agromonitor-left {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
 }
 
 .agromonitor-right {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  position: sticky;
+  top: 100px;
+}
+
+.agromonitor-main-visual {
+  width: 100%;
+}
+
+.agromonitor-main-visual img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.agents-grid-professional {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.agent-card-professional {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.agent-card-professional:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.agent-icon-professional {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agent-icon-professional svg {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.agent-card-professional h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 12px 0 8px;
+  color: #ffffff;
+}
+
+.agent-card-professional p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.agromonitor-platform-features {
+  width: 100%;
+}
+
+.platform-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.feature-card-professional {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-card-professional:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.feature-card-professional img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.feature-card-professional h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
 }
 
 /* Compact AgroMonitor Styles */
@@ -1694,9 +1794,20 @@ body {
 }
 
 .agent-icon-compact {
-  font-size: 2rem;
-  margin-bottom: 8px;
-  filter: drop-shadow(0 0 12px currentColor);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agent-icon-compact svg {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 8px currentColor);
 }
 
 .agent-card-compact h4 {
@@ -1756,11 +1867,46 @@ body {
     gap: 30px;
   }
 
-  .agents-grid-compact {
-    grid-template-columns: repeat(2, 1fr);
+  .agromonitor-right {
+    position: relative;
+    top: 0;
   }
 
-  .platform-features-visual-compact {
+  .agents-grid-professional {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .agent-card-professional {
+    padding: 20px 15px;
+  }
+
+  .agent-icon-professional {
+    width: 50px;
+    height: 50px;
+  }
+
+  .agent-icon-professional svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .agent-card-professional h4 {
+    font-size: 0.9rem;
+  }
+
+  .agent-card-professional p {
+    font-size: 0.8rem;
+  }
+
+  .platform-features-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .agents-grid-professional {
     grid-template-columns: 1fr;
   }
 }
@@ -1896,22 +2042,15 @@ body {
     font-size: 1.1rem;
   }
 
-  .agent-messages-container {
+  .typewriter-container {
+    min-height: 100px;
     margin: 30px auto;
     padding: 0 15px;
   }
 
-  .agent-message {
-    padding: 14px 16px;
-  }
-
-  .agent-name {
-    font-size: 0.9rem;
-  }
-
-  .agent-task {
-    font-size: 0.85rem;
-    padding-left: 28px;
+  .typewriter-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   .hero-buttons {
