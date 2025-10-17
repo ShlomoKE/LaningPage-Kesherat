@@ -5,27 +5,27 @@ export default function Problems() {
   const problems = [
     {
       id: 1,
-      title: 'Labor Shortage',
-      icon: '👥',
-      color: '#FF6B6B',
-      stat: '56%',
-      description: 'Farmers report labor issues'
+      title: 'Data Overload',
+      icon: '📊',
+      color: '#2563eb',
+      stat: 'TB',
+      description: 'Unused agricultural data'
     },
     {
       id: 2,
-      title: 'Fragmented Tech',
-      icon: '⚙️',
-      color: '#4ECDC4',
-      stat: '100+',
-      description: 'Incompatible systems per farm'
+      title: 'Silent Hardware',
+      icon: '🔇',
+      color: '#7c3aed',
+      stat: '85%',
+      description: 'Devices just collect data'
     },
     {
       id: 3,
-      title: 'Intelligence Gap',
-      icon: '🧠',
-      color: '#FFE66D',
-      stat: '0%',
-      description: 'Autonomous coordination'
+      title: 'Manual Analysis',
+      icon: '⏱️',
+      color: '#0891b2',
+      stat: '40hrs',
+      description: 'Weekly data interpretation'
     }
   ]
 
