@@ -19,24 +19,42 @@ export default function DemoForm() {
     })
   }
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aquí puedes integrar con tu backend o servicio de email
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        farmSize: '',
-        message: ''
+
+    // Submit to Netlify Forms
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "demo-request", ...formData })
+    })
+      .then(() => {
+        console.log('Form successfully submitted to Netlify')
+        setSubmitted(true)
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            farmSize: '',
+            message: ''
+          })
+          setSubmitted(false)
+        }, 3000)
       })
-      setSubmitted(false)
-    }, 3000)
+      .catch(error => {
+        console.error('Form submission error:', error)
+        alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo.')
+      })
   }
 
   return (
@@ -55,7 +73,24 @@ export default function DemoForm() {
               <p>We've received your request. Our team will contact you within 24 hours to schedule your personalized demo.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="demo-form" netlify>
+            <form
+              onSubmit={handleSubmit}
+              className="demo-form"
+              name="demo-request"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              {/* Hidden input for Netlify */}
+              <input type="hidden" name="form-name" value="demo-request" />
+
+              {/* Honeypot field for spam protection */}
+              <p style={{ display: 'none' }}>
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
+
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
