@@ -78,18 +78,9 @@ export default function DemoForm() {
               className="demo-form"
               name="demo-request"
               method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
             >
               {/* Hidden input for Netlify */}
               <input type="hidden" name="form-name" value="demo-request" />
-
-              {/* Honeypot field for spam protection */}
-              <p style={{ display: 'none' }}>
-                <label>
-                  Don't fill this out if you're human: <input name="bot-field" />
-                </label>
-              </p>
 
               <div className="form-row">
                 <div className="form-group">
