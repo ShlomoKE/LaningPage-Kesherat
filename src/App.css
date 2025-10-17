@@ -445,11 +445,68 @@ body {
 
 
 
+/* Agent Messages */
+.agent-messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.agent-message {
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(16, 185, 129, 0.1) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-left: 4px solid #3b82f6;
+  border-radius: 12px;
+  padding: 16px 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.agent-message:hover {
+  transform: translateX(5px);
+  border-left-color: #10b981;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
+.agent-message-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.agent-icon {
+  font-size: 1.2rem;
+  filter: grayscale(0.3);
+}
+
+.agent-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agent-task {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding-left: 32px;
+  font-style: italic;
+}
+
 .hero-buttons {
   display: flex;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .cta-button {
@@ -1839,8 +1896,27 @@ body {
     font-size: 1.1rem;
   }
 
+  .agent-messages-container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .agent-message {
+    padding: 14px 16px;
+  }
+
+  .agent-name {
+    font-size: 0.9rem;
+  }
+
+  .agent-task {
+    font-size: 0.85rem;
+    padding-left: 28px;
+  }
+
   .hero-buttons {
     flex-direction: column;
+    margin-top: 25px;
   }
 
   .cta-button {

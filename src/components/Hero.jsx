@@ -47,6 +47,28 @@ export default function Hero() {
           {t.subtitle}
         </motion.p>
 
+        <motion.div variants={itemVariants} className="agent-messages-container">
+          {t.agentMessages.map((msg, index) => (
+            <motion.div
+              key={index}
+              className="agent-message"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 1 + index * 0.3,
+                duration: 0.6,
+                ease: 'easeOut'
+              }}
+            >
+              <div className="agent-message-header">
+                <span className="agent-icon">🤖</span>
+                <span className="agent-name">Hello {msg.agent},</span>
+              </div>
+              <p className="agent-task">{msg.message}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
         <motion.div variants={itemVariants} className="hero-buttons">
           <button
             className="cta-button primary"

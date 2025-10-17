@@ -23,7 +23,29 @@ export const translations = {
       buttons: {
         getStarted: 'Get Started',
         learnMore: 'Learn More'
-      }
+      },
+      agentMessages: [
+        {
+          agent: 'Tractor 1',
+          message: 'Your task is to tell me how much fuel you use when passing through sector D'
+        },
+        {
+          agent: 'Soil Sensors',
+          message: 'Your job is to understand when the trees need more water'
+        },
+        {
+          agent: 'Picker Robot',
+          message: 'Analyze the fruit sizes for me'
+        },
+        {
+          agent: 'Weather Station',
+          message: 'Predict rainfall patterns for the next 48 hours'
+        },
+        {
+          agent: 'Drone Fleet',
+          message: 'Monitor crop health in the northern fields'
+        }
+      ]
     },
     
     // Problems
@@ -266,7 +288,29 @@ export const translations = {
       buttons: {
         getStarted: 'Comenzar',
         learnMore: 'Saber Más'
-      }
+      },
+      agentMessages: [
+        {
+          agent: 'Tractor 1',
+          message: 'Tu tarea es decirme cuánta gasolina gastas cuando pasas por el sector D'
+        },
+        {
+          agent: 'Sensores de Suelo',
+          message: 'Su trabajo es entender cuándo los árboles necesitan más agua'
+        },
+        {
+          agent: 'Robot Recolector',
+          message: 'Analízame los tamaños de las frutas'
+        },
+        {
+          agent: 'Estación Meteorológica',
+          message: 'Predice los patrones de lluvia para las próximas 48 horas'
+        },
+        {
+          agent: 'Flota de Drones',
+          message: 'Monitorea la salud de los cultivos en los campos del norte'
+        }
+      ]
     },
     
     // Problems
