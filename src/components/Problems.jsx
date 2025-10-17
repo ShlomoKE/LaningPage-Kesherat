@@ -1,31 +1,36 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 export default function Problems() {
+  const { language } = useLanguage()
+  const t = translations[language].problems
+
   const problems = [
     {
       id: 1,
-      title: 'Data Overload',
+      title: t.problem1.title,
       icon: '📊',
       color: '#2563eb',
       stat: 'TB',
-      description: 'Unused agricultural data'
+      description: t.problem1.description
     },
     {
       id: 2,
-      title: 'Silent Hardware',
+      title: t.problem2.title,
       icon: '🔇',
       color: '#7c3aed',
       stat: '85%',
-      description: 'Devices just collect data'
+      description: t.problem2.description
     },
     {
       id: 3,
-      title: 'Manual Analysis',
+      title: t.problem3.title,
       icon: '⏱️',
       color: '#0891b2',
       stat: '40hrs',
-      description: 'Weekly data interpretation'
+      description: t.problem3.description
     }
   ]
 
@@ -57,7 +62,8 @@ export default function Problems() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>The Challenge</h2>
+          <h2>{t.title}</h2>
+          <p className="section-subtitle">{t.subtitle}</p>
         </motion.div>
 
         <motion.div

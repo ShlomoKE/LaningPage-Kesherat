@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import { LanguageProvider } from './contexts/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Problems from './components/Problems'
@@ -10,15 +11,17 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Hero />
-      <Problems />
-      <Solution />
-      <AgroMonitor />
-      <DemoForm />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="app">
+        <Navbar />
+        <Hero />
+        <Problems />
+        <Solution />
+        <AgroMonitor />
+        <DemoForm />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

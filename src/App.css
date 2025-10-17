@@ -76,8 +76,25 @@ body {
 }
 
 .navbar-logo-img {
-  height: 45px;
+  height: 65px;
   width: auto;
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3));
+  transition: all 0.3s ease;
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+.navbar-logo-img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.5));
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 4px 16px rgba(37, 99, 235, 0.6));
+  }
 }
 
 .navbar-menu {
@@ -132,6 +149,29 @@ body {
 .navbar-menu li a.nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Language Toggle Button */
+.language-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-light);
+  transform: translateY(-2px);
 }
 
 .mobile-menu-toggle {
