@@ -24,8 +24,11 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <span className="logo-text">Kesherat</span>
-          <span className="logo-tagline">Agentic Agriculture</span>
+          <img src="/Kesherat-Link.png" alt="Kesherat" className="navbar-logo-img" />
+          <div className="logo-text-container">
+            <span className="logo-text">Kesherat</span>
+            <span className="logo-tagline">Agentic Agriculture</span>
+          </div>
         </div>
 
         <button 

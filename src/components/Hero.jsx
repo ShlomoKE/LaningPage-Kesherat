@@ -35,14 +35,6 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="hero-logo-container">
-          <img
-            src="/KesheratLogo-HQ.png"
-            alt="Kesherat"
-            className="hero-logo"
-          />
-        </motion.div>
-
         <motion.h1 variants={itemVariants} className="hero-title-agentic">
           <span className="gradient-text-large">Agentic Agriculture</span>
         </motion.h1>
@@ -52,9 +44,25 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-tagline">
-          <div className="tag">🌾 Agriculture</div>
-          <div className="tag">🔗 Connection</div>
-          <div className="tag">⚡ Technology</div>
+          <div className="tag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2v20M2 12h20M6 6l12 12M6 18L18 6"/>
+            </svg>
+            Agriculture
+          </div>
+          <div className="tag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v6m0 6v6M1 12h6m6 0h6"/>
+            </svg>
+            Connection
+          </div>
+          <div className="tag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Technology
+          </div>
         </motion.div>
 
         <motion.div variants={itemVariants} className="hero-buttons">

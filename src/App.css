@@ -72,6 +72,17 @@ body {
 
 .navbar-logo {
   display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-text-container {
+  display: flex;
   flex-direction: column;
   gap: 2px;
 }
@@ -438,6 +449,14 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-tagline .tag svg {
+  stroke: currentColor;
+  opacity: 0.9;
 }
 
 .hero-tagline .tag::before {
@@ -2082,11 +2101,19 @@ body {
   line-height: 1.6;
 }
 
-.demo-form-container {
-  max-width: 700px;
+/* Two Column Layout for Demo */
+.demo-two-column {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+}
+
+.demo-form-container {
   background: var(--white);
-  padding: 50px;
+  padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(37, 99, 235, 0.1);
@@ -2227,7 +2254,80 @@ body {
   margin: 0 auto;
 }
 
+/* Why Kesherat Section in Demo */
+.demo-why-section {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.demo-why-section h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.why-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.why-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: var(--white);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(37, 99, 235, 0.08);
+}
+
+.why-feature-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.why-feature-icon {
+  font-size: 1.8rem;
+  min-width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border-radius: 8px;
+  color: var(--accent-color);
+}
+
+.why-feature-icon svg {
+  stroke: currentColor;
+}
+
+.why-feature-content h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.why-feature-content p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
 @media (max-width: 768px) {
+  .demo-two-column {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
   .demo-form-container {
     padding: 30px 20px;
   }
