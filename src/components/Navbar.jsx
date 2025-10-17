@@ -24,11 +24,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/Kesherat-Link.png" alt="Kesherat" className="navbar-logo-img" />
-          <div className="logo-text-container">
-            <span className="logo-text">Kesherat</span>
-            <span className="logo-tagline">Agentic Agriculture</span>
-          </div>
+          <img src="/KesheratLogo.png" alt="Kesherat" className="navbar-logo-img" />
         </div>
 
         <button 
@@ -45,7 +41,7 @@ export default function Navbar() {
           <li><a onClick={() => scrollToSection('hero')}>Home</a></li>
           <li><a onClick={() => scrollToSection('problems')}>Problems</a></li>
           <li><a onClick={() => scrollToSection('solution')}>Solution</a></li>
-          <li><a onClick={() => scrollToSection('features')}>Features</a></li>
+          <li><a onClick={() => scrollToSection('agromonitor')}>AgroMonitor</a></li>
           <li><a onClick={() => scrollToSection('demo-form')} className="nav-cta">Request Demo</a></li>
         </ul>
       </div>

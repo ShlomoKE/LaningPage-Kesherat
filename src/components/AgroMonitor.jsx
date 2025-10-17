@@ -50,7 +50,7 @@ export default function AgroMonitor() {
   ]
 
   return (
-    <section className="agromonitor">
+    <section className="agromonitor" id="agromonitor">
       <motion.div
         className="agromonitor-content"
         variants={containerVariants}

@@ -73,33 +73,11 @@ body {
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .navbar-logo-img {
-  height: 50px;
+  height: 45px;
   width: auto;
-}
-
-.logo-text-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.5px;
-}
-
-.logo-tagline {
-  font-size: 0.65rem;
-  color: var(--accent-light);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .navbar-menu {
