@@ -698,7 +698,7 @@ body {
 
 /* Solution Section */
 .solution {
-  padding: 50px 20px 40px;
+  padding: 35px 20px 25px;
   background: linear-gradient(135deg, #1a1f36 0%, #2d3748 100%);
   color: var(--white);
   position: relative;
@@ -720,8 +720,8 @@ body {
 
 .solution h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 8px;
   color: var(--white);
   font-weight: 800;
   position: relative;
@@ -730,9 +730,9 @@ body {
 
 .solution .section-subtitle {
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   font-weight: 400;
   position: relative;
   z-index: 2;
@@ -741,10 +741,10 @@ body {
 /* Funnel Container */
 .solution-funnel {
   position: relative;
-  max-width: 1000px;
-  margin: 0 auto 30px auto;
-  padding: 30px 20px;
-  min-height: 600px;
+  max-width: 900px;
+  margin: 0 auto 15px auto;
+  padding: 20px 15px;
+  min-height: 450px;
 }
 
 /* SVG Funnel Lines */
@@ -763,34 +763,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  margin-bottom: 30px;
+  gap: 18px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 2;
   flex-wrap: wrap;
 }
 
 .funnel-row-1 {
-  margin-top: 10px;
-  max-width: 900px;
+  margin-top: 5px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  gap: 12px;
+  gap: 10px;
 }
 
 .funnel-row-2 {
-  max-width: 900px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  gap: 12px;
+  gap: 10px;
 }
 
 .funnel-row-3 {
-  max-width: 1000px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
-  gap: 10px;
+  margin-bottom: 25px;
+  gap: 8px;
 }
 
 /* Funnel Items */
@@ -799,9 +799,9 @@ body {
     rgba(26, 31, 54, 0.95) 0%,
     rgba(15, 20, 25, 0.95) 100%);
   border: 2px solid rgba(37, 99, 235, 0.3);
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
   white-space: nowrap;
@@ -809,8 +809,8 @@ body {
   cursor: default;
   backdrop-filter: blur(10px);
   box-shadow:
-    0 4px 15px rgba(0, 0, 0, 0.2),
-    0 2px 8px rgba(37, 99, 235, 0.15),
+    0 3px 12px rgba(0, 0, 0, 0.2),
+    0 1px 6px rgba(37, 99, 235, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
@@ -882,16 +882,16 @@ body {
 .kesherat-box {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
-  padding: 35px 50px;
-  border-radius: 12px;
-  margin: 30px auto;
-  max-width: 550px;
+  padding: 25px 40px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 450px;
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 10px 30px rgba(37, 99, 235, 0.2),
+    0 15px 45px rgba(0, 0, 0, 0.4),
+    0 8px 25px rgba(37, 99, 235, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   position: relative;
   z-index: 3;
   backdrop-filter: blur(10px);
@@ -938,22 +938,22 @@ body {
 }
 
 .kesherat-logo {
-  max-width: 450px;
+  max-width: 350px;
   width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
   filter:
-    drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15))
-    drop-shadow(0 4px 12px rgba(37, 99, 235, 0.2));
-  transition: all 0.4s ease;
+    drop-shadow(0 6px 15px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 3px 10px rgba(37, 99, 235, 0.2));
+  transition: all 0.3s ease;
 }
 
 .kesherat-box:hover .kesherat-logo {
   filter:
-    drop-shadow(0 12px 30px rgba(0, 0, 0, 0.2))
-    drop-shadow(0 6px 18px rgba(37, 99, 235, 0.3));
-  transform: scale(1.02);
+    drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 5px 15px rgba(37, 99, 235, 0.3));
+  transform: scale(1.01);
 }
 
 .kesherat-title {
