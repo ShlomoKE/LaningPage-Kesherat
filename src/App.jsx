@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Problems from './components/Problems'
 import Solution from './components/Solution'
 import AgroMonitor from './components/AgroMonitor'
+import Pricing from './components/Pricing'
 import DemoForm from './components/DemoForm'
 import Footer from './components/Footer'
 
@@ -18,6 +19,7 @@ function App() {
         <Problems />
         <Solution />
         <AgroMonitor />
+        <Pricing />
         <DemoForm />
         <Footer />
       </div>

@@ -46,6 +46,7 @@ export default function Navbar() {
           <li><a onClick={() => scrollToSection('agromonitor')}>{t.agromonitor}</a></li>
           <li><a href={language === 'en' ? '/kesherat-link.html' : '/kesherat-link-es.html'}>{t.kesheratLink}</a></li>
           <li><a href={language === 'en' ? '/other-projects.html' : '/other-projects-es.html'}>{t.otherProjects}</a></li>
+          <li><a onClick={() => scrollToSection('pricing')}>{t.pricing}</a></li>
           <li><a href={language === 'en' ? '/about-us.html' : '/about-us-es.html'}>{t.aboutUs}</a></li>
           <li><a onClick={() => scrollToSection('demo-form')} className="nav-cta">{t.requestDemo}</a></li>
           <li>

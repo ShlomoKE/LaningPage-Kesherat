@@ -365,6 +365,115 @@
       color: rgba(255, 255, 255, 0.95);
       font-weight: 600;
     }
+
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      margin-top: 2mm;
+    }
+
+    .pricing-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.05) 100%);
+      border: 3px solid #10b981;
+      border-radius: 3mm;
+      padding: 3mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%);
+      border-color: #3b82f6;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .pricing-card.featured::before {
+      content: "⭐ RECOMENDADO";
+      position: absolute;
+      top: 2mm;
+      right: 2mm;
+      background: #3b82f6;
+      color: white;
+      padding: 1mm 2mm;
+      border-radius: 1.5mm;
+      font-size: 6.5pt;
+      font-weight: 800;
+    }
+
+    .pricing-card h3 {
+      font-size: 11pt;
+      color: #10b981;
+      margin-bottom: 2mm;
+      font-weight: 800;
+    }
+
+    .pricing-card.featured h3 {
+      color: #3b82f6;
+    }
+
+    .pricing-card .price {
+      font-size: 16pt;
+      color: #10b981;
+      font-weight: 800;
+      margin-bottom: 1mm;
+    }
+
+    .pricing-card.featured .price {
+      color: #3b82f6;
+    }
+
+    .pricing-card .price-detail {
+      font-size: 7.5pt;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2mm;
+      font-style: italic;
+    }
+
+    .pricing-card .discount {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid #f59e0b;
+      border-radius: 2mm;
+      padding: 1.5mm;
+      margin-bottom: 2mm;
+      text-align: center;
+    }
+
+    .pricing-card .discount p {
+      font-size: 7.5pt;
+      color: #f59e0b;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pricing-card li {
+      font-size: 7.5pt;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.5mm;
+      padding-left: 4mm;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .pricing-card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 9pt;
+    }
+
+    .pricing-card.featured li:before {
+      color: #3b82f6;
+    }
   </style>
 </head>
 <body>

@@ -8,6 +8,7 @@ export const translations = {
       agromonitor: 'AgroMonitor',
       kesheratLink: 'Kesherat Link',
       otherProjects: 'Other Projects',
+      pricing: 'Pricing',
       aboutUs: 'About Us',
       requestDemo: 'Request Demo'
     },
@@ -179,7 +180,43 @@ export const translations = {
         }
       }
     },
-    
+
+    // Pricing
+    pricing: {
+      title: 'Pricing',
+      subtitle: 'Choose the package that best fits your needs',
+      getStarted: 'Get Started',
+      note: 'All prices are in MXN. Custom packages available for large operations.',
+      contractNote: 'Minimum 1 year contract',
+      allInOne: {
+        selectorTitle: 'All-in-One Packages',
+        title: 'Tractor Package',
+        price: '1,352 MXN',
+        period: '/ monthly',
+        discount: 'Second year: 733 MXN monthly / tractor',
+        features: {
+          sensor: 'Fuel level sensor and GPS',
+          installation: 'Installation included',
+          data: '4G data included',
+          platform: 'Intelligent AgroMonitor platform',
+          secondYear: 'Second year: 733 MXN monthly / tractor'
+        }
+      },
+      softwareOnly: {
+        selectorTitle: 'Software Only',
+        title: 'Software Platform',
+        price: 'Contact Us',
+        period: '',
+        features: {
+          platform: 'AgroMonitor intelligent platform',
+          agents: 'Unlimited AI agents',
+          dashboard: 'Unified control dashboard',
+          support: 'Technical support',
+          updates: 'Free updates'
+        }
+      }
+    },
+
     // Footer
     footer: {
       tagline: 'Paving the way into agentic agriculture',
@@ -281,6 +318,7 @@ export const translations = {
       agromonitor: 'AgroMonitor',
       kesheratLink: 'Kesherat Link',
       otherProjects: 'Otros Proyectos',
+      pricing: 'Precios',
       aboutUs: 'Sobre Nosotros',
       requestDemo: 'Solicitar Demo'
     },
@@ -452,7 +490,43 @@ export const translations = {
         }
       }
     },
-    
+
+    // Pricing
+    pricing: {
+      title: 'Precios',
+      subtitle: 'Elige el paquete que mejor se adapte a tus necesidades',
+      getStarted: 'Comenzar',
+      note: 'Todos los precios están en MXN. Paquetes personalizados disponibles para operaciones grandes.',
+      contractNote: 'Mínimo 1 año de contrato',
+      allInOne: {
+        selectorTitle: 'Paquetes All-in-One',
+        title: 'Paquete Tractor',
+        price: '1,352 MXN',
+        period: '/ mensual',
+        discount: 'Segundo año: 733 MXN mensual / tractor',
+        features: {
+          sensor: 'Sensor de nivel de combustible y GPS',
+          installation: 'Instalación incluida',
+          data: 'Datos 4G incluidos',
+          platform: 'Plataforma AgroMonitor inteligente',
+          secondYear: 'Segundo año: 733 MXN mensual / tractor'
+        }
+      },
+      softwareOnly: {
+        selectorTitle: 'Solo Software',
+        title: 'Plataforma de Software',
+        price: 'Contáctanos',
+        period: '',
+        features: {
+          platform: 'Plataforma AgroMonitor inteligente',
+          agents: 'Agentes de IA ilimitados',
+          dashboard: 'Panel de control unificado',
+          support: 'Soporte técnico',
+          updates: 'Actualizaciones gratuitas'
+        }
+      }
+    },
+
     // Footer
     footer: {
       tagline: 'Abriendo camino hacia la agricultura agéntica',
