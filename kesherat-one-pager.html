@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kesherat - Presentación Comercial</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f36 50%, #0f1419 100%);
+      color: #ffffff;
+      line-height: 1.4;
+      padding: 0;
+      margin: 0;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f36 50%, #0f1419 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 12mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 6mm;
+      border-bottom: 3px solid #10b981;
+      padding-bottom: 4mm;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border-radius: 3mm;
+      padding: 4mm;
+    }
+
+    .logo {
+      font-size: 36pt;
+      font-weight: 800;
+      background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2mm;
+      text-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+    }
+
+    .tagline {
+      font-size: 12pt;
+      color: #10b981;
+      font-style: italic;
+      margin-bottom: 2mm;
+      font-weight: 600;
+    }
+
+    .hero-text {
+      font-size: 13pt;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Main Content Grid */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      flex: 1;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(16, 185, 129, 0.3);
+      border-radius: 3mm;
+      padding: 3.5mm;
+      backdrop-filter: blur(10px);
+    }
+
+    .section.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .section.green {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+      border-color: #10b981;
+    }
+
+    .section.blue {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+      border-color: #3b82f6;
+    }
+
+    .section.purple {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
+      border-color: #8b5cf6;
+    }
+
+    .section.orange {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+      border-color: #f59e0b;
+    }
+
+    .section h2 {
+      font-size: 12pt;
+      color: #10b981;
+      margin-bottom: 2.5mm;
+      border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+      padding-bottom: 1.5mm;
+      font-weight: 700;
+    }
+
+    .section.blue h2 { color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); }
+    .section.purple h2 { color: #8b5cf6; border-color: rgba(139, 92, 246, 0.3); }
+    .section.orange h2 { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); }
+
+    .section h3 {
+      font-size: 10pt;
+      color: #3b82f6;
+      margin-bottom: 1.5mm;
+      margin-top: 2mm;
+      font-weight: 600;
+    }
+
+    .section p {
+      font-size: 8.5pt;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2mm;
+      line-height: 1.5;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .section li {
+      font-size: 8pt;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.5mm;
+      padding-left: 4mm;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .section li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .section.blue li:before { color: #3b82f6; }
+    .section.purple li:before { color: #8b5cf6; }
+    .section.orange li:before { color: #f59e0b; }
+
+    /* Feature Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2.5mm;
+      margin-top: 2mm;
+    }
+
+    .feature-box {
+      background: rgba(16, 185, 129, 0.15);
+      border: 2px solid rgba(16, 185, 129, 0.5);
+      border-radius: 2mm;
+      padding: 2mm;
+      text-align: center;
+    }
+
+    .feature-box.blue {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .feature-box.purple {
+      background: rgba(139, 92, 246, 0.15);
+      border-color: rgba(139, 92, 246, 0.5);
+    }
+
+    .feature-box.orange {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
+    .feature-box h4 {
+      font-size: 8.5pt;
+      color: #10b981;
+      margin-bottom: 1mm;
+      font-weight: 700;
+    }
+
+    .feature-box.blue h4 { color: #3b82f6; }
+    .feature-box.purple h4 { color: #8b5cf6; }
+    .feature-box.orange h4 { color: #f59e0b; }
+
+    .feature-box p {
+      font-size: 7pt;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* Screenshot */
+    .screenshot-container {
+      margin: 2mm 0;
+      text-align: center;
+      border: 2px solid #3b82f6;
+      border-radius: 3mm;
+      overflow: hidden;
+      background: rgba(59, 130, 246, 0.1);
+    }
+
+    .screenshot-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Example Box */
+    .example-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border: 2px solid #10b981;
+      border-radius: 2.5mm;
+      padding: 2.5mm;
+      margin: 2mm 0;
+    }
+
+    .example-box h4 {
+      font-size: 9pt;
+      color: #10b981;
+      margin-bottom: 1.5mm;
+      font-weight: 700;
+    }
+
+    .example-box p {
+      font-size: 7.5pt;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .example-box strong {
+      color: #3b82f6;
+      font-style: normal;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2mm;
+      margin-top: 2mm;
+    }
+
+    .benefit-box {
+      background: rgba(245, 158, 11, 0.15);
+      border: 2px solid rgba(245, 158, 11, 0.5);
+      border-radius: 2mm;
+      padding: 2.5mm;
+    }
+
+    .benefit-box h4 {
+      font-size: 8.5pt;
+      color: #f59e0b;
+      margin-bottom: 1mm;
+      font-weight: 700;
+    }
+
+    .benefit-box p {
+      font-size: 7.5pt;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 3mm;
+      padding-top: 2.5mm;
+      border-top: 3px solid #10b981;
+      font-size: 8pt;
+      color: rgba(255, 255, 255, 0.7);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border-radius: 2mm;
+      padding: 2.5mm;
+    }
+
+    .footer strong {
+      color: #10b981;
+      font-size: 9pt;
+      font-weight: 700;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #0f1419;
+      }
+
+      .page {
+        margin: 0;
+        page-break-after: always;
+      }
+    }
+
+    .highlight {
+      color: #10b981;
+      font-weight: 700;
+    }
+
+    .highlight-blue {
+      color: #3b82f6;
+      font-weight: 700;
+    }
+
+    .highlight-purple {
+      color: #8b5cf6;
+      font-weight: 700;
+    }
+
+    .highlight-orange {
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(59, 130, 246, 0.25) 100%);
+      border: 3px solid #10b981;
+      border-radius: 3mm;
+      padding: 3mm;
+      text-align: center;
+      margin-top: 2mm;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .cta-box h3 {
+      font-size: 12pt;
+      color: #10b981;
+      margin-bottom: 1.5mm;
+      font-weight: 800;
+    }
+
+    .cta-box p {
+      font-size: 9pt;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">KESHERAT</div>
+      <div class="tagline">Abriendo camino hacia la agricultura agéntica</div>
+      <div class="hero-text">Transformamos Hardware y Datos en agentes inteligentes para agricultores</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- What is Kesherat -->
+      <div class="section green">
+        <h2>🌾 ¿Qué es Kesherat?</h2>
+        <p>
+          Kesherat es una <span class="highlight">plataforma agrícola impulsada por IA</span> que transforma la tecnología agrícola fragmentada en una red unificada de agentes inteligentes. Cerramos la brecha entre la agricultura tradicional y la tecnología de vanguardia.
+        </p>
+        <p>
+          Nuestra plataforma convierte cualquier equipo agrícola - desde tractores antiguos hasta sensores IoT modernos - en <span class="highlight">agentes de IA autónomos</span> que pueden pensar, coordinarse y optimizar las operaciones agrícolas.
+        </p>
+      </div>
+
+      <!-- The Problem -->
+      <div class="section orange">
+        <h2>⚠️ El Problema</h2>
+        <p><strong>Las granjas modernas se ahogan en tecnología desconectada:</strong></p>
+        <ul>
+          <li>Múltiples plataformas que no se comunican entre sí</li>
+          <li>Demasiados datos, sin insights accionables</li>
+          <li>Agricultores pasan horas gestionando herramientas en vez de cultivar</li>
+          <li>Hardware costoso que no trabaja en conjunto</li>
+          <li>Sistemas complejos que requieren experiencia técnica</li>
+        </ul>
+      </div>
+
+      <!-- The Solution: Kesherat-Link -->
+      <div class="section full-width blue">
+        <h2>✨ La Solución: Kesherat-Link</h2>
+        <p>
+          <strong>Un centro neurológico para la agricultura.</strong> Kesherat-Link actúa como el sistema nervioso central de tu granja, conectando todo el hardware y fuentes de datos en una plataforma inteligente unificada.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <h4>🔌 Compatibilidad Universal</h4>
+            <p>Funciona con cualquier sensor, dron o maquinaria</p>
+          </div>
+          <div class="feature-box blue">
+            <h4>⚡ Datos en Tiempo Real</h4>
+            <p>Agregación en vivo de todas las fuentes</p>
+          </div>
+          <div class="feature-box purple">
+            <h4>🤖 Agentes de IA</h4>
+            <p>Toma de decisiones autónoma</p>
+          </div>
+          <div class="feature-box orange">
+            <h4>📊 Panel Único</h4>
+            <p>Supervisión completa de la granja</p>
+          </div>
+        </div>
+
+        <h3>Cómo Funciona:</h3>
+        <ul>
+          <li><strong>Paso 1:</strong> Envía datos de dispositivos a nuestros portales MQTT o APIs REST</li>
+          <li><strong>Paso 2:</strong> Los dispositivos se registran automáticamente en la plataforma Kesherat</li>
+          <li><strong>Paso 3:</strong> Se crean agentes de IA para cada dispositivo según sus capacidades</li>
+          <li><strong>Paso 4:</strong> Comanda tu granja a través de lenguaje natural</li>
+        </ul>
+      </div>
+
+      <!-- AgroMonitor -->
+      <div class="section full-width purple">
+        <h2>🎯 AgroMonitor - Tu Centro de Comando Inteligente</h2>
+        <p>
+          <span class="highlight-purple">AgroMonitor</span> es donde interactúas y gestionas todos tus agentes agrícolas. Cualquier hardware conectado se convierte en un agente inteligente con el que puedes comunicarte, asignar tareas y coordinar a través de una plataforma unificada.
+        </p>
+
+        <div class="screenshot-container">
+          <img src="/AgromonitorViewPC.png" alt="AgroMonitor Dashboard" />
+        </div>
+
+        <h3>Ejemplos de Uso Real:</h3>
+
+        <div class="example-box">
+          <h4>💬 "Hola Tractor 1, ¿cuánto combustible usaste al pasar por el sector D?"</h4>
+          <p><strong>Respuesta del Agente:</strong> "Usé 45 litros en el sector D. El consumo fue 12% mayor que el promedio debido al terreno irregular. Recomiendo ajustar la presión de los neumáticos para la próxima pasada."</p>
+        </div>
+
+        <div class="example-box">
+          <h4>💬 "Sensores de Suelo, ¿cuándo necesitan más agua los árboles?"</h4>
+          <p><strong>Respuesta del Agente:</strong> "La humedad del suelo en el sector norte está al 35%. Basado en las predicciones meteorológicas y el ciclo de crecimiento actual, recomiendo riego en 48 horas. Cantidad estimada: 2,500 litros."</p>
+        </div>
+
+        <div class="example-box">
+          <h4>💬 "Robot Cosechador, analiza los tamaños de fruta para mí"</h4>
+          <p><strong>Respuesta del Agente:</strong> "He analizado 1,247 frutas. Distribución: 68% tamaño premium, 25% estándar, 7% pequeño. El sector este muestra frutas 15% más grandes que el promedio. Sugiero priorizar cosecha en esa zona."</p>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="section full-width orange">
+        <h2>💎 Beneficios Clave para tu Negocio</h2>
+        <div class="benefits-grid">
+          <div class="benefit-box">
+            <h4>⏱️ Ahorro de Tiempo</h4>
+            <p>Reduce hasta 70% el tiempo dedicado a gestión de tecnología agrícola</p>
+          </div>
+          <div class="benefit-box">
+            <h4>💰 Reducción de Costos</h4>
+            <p>Optimiza uso de recursos: agua, combustible, fertilizantes, mano de obra</p>
+          </div>
+          <div class="benefit-box">
+            <h4>📈 Aumento de Productividad</h4>
+            <p>Decisiones basadas en datos en tiempo real aumentan rendimiento hasta 40%</p>
+          </div>
+          <div class="benefit-box">
+            <h4>🌱 Sostenibilidad</h4>
+            <p>Agricultura de precisión que cuida el medio ambiente y maximiza eficiencia</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="section full-width">
+        <div class="cta-box">
+          <h3>🚀 ¿Listo para Transformar tu Granja?</h3>
+          <p>Únete al futuro de la agricultura con la plataforma inteligente basada en agentes de Kesherat</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <strong>Contáctanos:</strong> www.kesherat.com | info@kesherat.com | +1 (555) 123-4567<br>
+      © 2024 Kesherat. Todos los derechos reservados. | Pioneros en Agricultura Agéntica
+    </div>
+  </div>
+</body>
+</html>
+

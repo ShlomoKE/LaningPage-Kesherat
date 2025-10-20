@@ -7,6 +7,7 @@ export const translations = {
       solution: 'Solution',
       agromonitor: 'AgroMonitor',
       kesheratLink: 'Kesherat Link',
+      otherProjects: 'Other Projects',
       aboutUs: 'About Us',
       requestDemo: 'Request Demo'
     },
@@ -126,6 +127,7 @@ export const translations = {
         email: 'Email',
         company: 'Company/Farm Name',
         phone: 'Phone Number',
+        projectType: 'Project Type',
         farmSize: 'Farm Size (hectares)',
         message: 'Tell us about your needs',
         placeholders: {
@@ -134,6 +136,11 @@ export const translations = {
           company: 'Your Farm Name',
           phone: '+1 (555) 000-0000',
           message: 'What challenges are you facing? What technologies do you currently use?'
+        },
+        projectTypeOptions: {
+          select: 'Select project type',
+          agricultural: '🌾 Agricultural',
+          industrial: '🏭 Industrial'
         },
         farmSizeOptions: {
           select: 'Select farm size',
@@ -273,6 +280,7 @@ export const translations = {
       solution: 'Solución',
       agromonitor: 'AgroMonitor',
       kesheratLink: 'Kesherat Link',
+      otherProjects: 'Otros Proyectos',
       aboutUs: 'Sobre Nosotros',
       requestDemo: 'Solicitar Demo'
     },
@@ -392,6 +400,7 @@ export const translations = {
         email: 'Correo Electrónico',
         company: 'Empresa/Nombre de Granja',
         phone: 'Número de Teléfono',
+        projectType: 'Tipo de Proyecto',
         farmSize: 'Tamaño de Granja (hectáreas)',
         message: 'Cuéntanos sobre tus necesidades',
         placeholders: {
@@ -400,6 +409,11 @@ export const translations = {
           company: 'Nombre de tu Granja',
           phone: '+52 (555) 000-0000',
           message: '¿Qué desafíos enfrentas? ¿Qué tecnologías usas actualmente?'
+        },
+        projectTypeOptions: {
+          select: 'Selecciona tipo de proyecto',
+          agricultural: '🌾 Agrícola',
+          industrial: '🏭 Industrial'
         },
         farmSizeOptions: {
           select: 'Selecciona tamaño de granja',

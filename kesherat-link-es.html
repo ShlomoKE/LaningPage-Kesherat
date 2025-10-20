@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kesherat-Link - The Bridge Between Agriculture and Technology</title>
+  <title>Kesherat-Link - El Puente Entre la Agricultura y la Tecnología</title>
   <style>
     * {
       margin: 0;
@@ -98,76 +98,67 @@
       align-items: center;
     }
 
-    .navbar-menu li {
-      position: relative;
-    }
-
-    .navbar-menu li a {
-      color: rgba(255, 255, 255, 0.85);
+    .navbar-menu a {
+      color: rgba(255, 255, 255, 0.9);
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
       transition: all 0.3s ease;
-      cursor: pointer;
       position: relative;
+      padding: 8px 0;
     }
 
-    .navbar-menu li a::after {
+    .navbar-menu a:hover {
+      color: #3b82f6;
+    }
+
+    .navbar-menu a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent-light);
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
       transition: width 0.3s ease;
     }
 
-    .navbar-menu li a:hover {
-      color: var(--white);
-    }
-
-    .navbar-menu li a:hover::after {
+    .navbar-menu a:hover::after {
       width: 100%;
     }
 
-    .navbar-menu li a.nav-cta {
-      background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
-      padding: 10px 24px;
+    .nav-cta {
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      padding: 10px 24px !important;
       border-radius: 6px;
-      color: var(--white);
-      font-weight: 600;
       box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     }
 
-    .navbar-menu li a.nav-cta::after {
-      display: none;
-    }
-
-    .navbar-menu li a.nav-cta:hover {
+    .nav-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
 
+    .nav-cta::after {
+      display: none;
+    }
+
     .language-toggle {
       background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
       padding: 8px 16px;
       border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
       cursor: pointer;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .language-toggle:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: var(--accent-light);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-2px);
     }
 
@@ -184,140 +175,9 @@
     .mobile-menu-toggle span {
       width: 25px;
       height: 3px;
-      background: var(--white);
-      border-radius: 2px;
+      background: white;
+      border-radius: 3px;
       transition: all 0.3s ease;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 100px 20px 60px;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 20px;
-    }
-
-    .subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 15px;
-    }
-
-    .description {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    .section {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 40px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: #3b82f6;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 15px;
-      padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-      border-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: #60a5fa;
-    }
-
-    .card p {
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.7;
-    }
-
-    .section ul {
-      list-style: none;
-      margin-top: 20px;
-    }
-
-    .section ul li {
-      padding: 12px 0;
-      padding-left: 30px;
-      position: relative;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .section ul li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #10b981;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .visual {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .visual img {
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .back-button {
-      display: inline-block;
-      padding: 12px 30px;
-      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      margin-top: 40px;
-    }
-
-    .back-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
     }
 
     @media (max-width: 768px) {
@@ -332,7 +192,7 @@
         right: 0;
         background: rgba(15, 20, 25, 0.98);
         flex-direction: column;
-        padding: 30px 20px;
+        padding: 20px;
         gap: 20px;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
@@ -342,28 +202,154 @@
       .navbar-menu.open {
         transform: translateX(0);
       }
-
-      .navbar-menu li a.nav-cta {
-        display: inline-block;
-      }
     }
 
-    /* Content spacing for fixed navbar */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 20px 60px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #3b82f6;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section ul li {
+      padding: 12px 0;
+      padding-left: 30px;
+      position: relative;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #60a5fa;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .visual {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .visual img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .back-button {
+      display: inline-block;
+      color: #3b82f6;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      color: #60a5fa;
+      transform: translateX(-5px);
+    }
+
     @media (max-width: 768px) {
       .container {
-        padding: 140px 20px 60px;
+        padding: 140px 20px 40px;
       }
 
-      .header {
-        margin-bottom: 40px;
-      }
-
-      h1 {
+      .header h1 {
         font-size: 2rem;
       }
 
       .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
       .description {
@@ -372,7 +358,6 @@
 
       .section {
         padding: 25px;
-        margin-bottom: 30px;
       }
 
       .section h2 {
@@ -381,45 +366,37 @@
 
       .grid {
         grid-template-columns: 1fr;
-        gap: 20px;
       }
 
       .card {
         padding: 20px;
       }
-
-      .card h3 {
-        font-size: 1.2rem;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="navbar-container">
-      <div class="navbar-logo">
-        <a href="/">
-          <img src="/KesheratLogo.png" alt="Kesherat" class="navbar-logo-img">
-        </a>
-      </div>
+      <a href="/" class="navbar-logo">
+        <img src="/logo.png" alt="Kesherat Logo" class="navbar-logo-img">
+      </a>
 
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <ul class="navbar-menu" id="navbarMenu">
-        <li><a href="/">Home</a></li>
+        <li><a href="/">Inicio</a></li>
         <li><a href="/#agromonitor">AgroMonitor</a></li>
-        <li><a href="/kesherat-link.html">Kesherat Link</a></li>
-        <li><a href="/other-projects.html">Other Projects</a></li>
-        <li><a href="/about-us.html">About Us</a></li>
-        <li><a href="/#demo-form" class="nav-cta">Request Demo</a></li>
+        <li><a href="/kesherat-link-es.html">Kesherat Link</a></li>
+        <li><a href="/other-projects-es.html">Otros Proyectos</a></li>
+        <li><a href="/about-us-es.html">Sobre Nosotros</a></li>
+        <li><a href="/#demo-form" class="nav-cta">Solicitar Demo</a></li>
         <li>
-          <a href="/kesherat-link-es.html" class="language-toggle">
-            🇪🇸 ES
+          <a href="/kesherat-link.html" class="language-toggle">
+            🇺🇸 EN
           </a>
         </li>
       </ul>
@@ -449,22 +426,22 @@
   <div class="container">
     <div class="header">
       <h1>Kesherat-Link</h1>
-      <p class="subtitle">The Bridge Between Agriculture and Technology</p>
+      <p class="subtitle">El Puente Entre la Agricultura y la Tecnología</p>
       <p class="description">
-        Kesherat-Link is our revolutionary platform that transforms any agricultural hardware into intelligent, coordinated AI agents. Connect your existing equipment, sensors, and systems into one unified network that works together seamlessly.
+        Kesherat-Link es nuestra plataforma revolucionaria que transforma cualquier hardware agrícola en agentes de IA inteligentes y coordinados. Conecta tu equipo, sensores y sistemas existentes en una red unificada que funciona perfectamente en conjunto.
       </p>
     </div>
 
-    <div class="section" data-section="whatIs">
+    <div class="section">
       <h2>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 6v6l4 2"/>
         </svg>
-        What is Kesherat-Link?
+        ¿Qué es Kesherat-Link?
       </h2>
       <p>
-        Kesherat-Link is the bridge that connects your farm's hardware and software to our AI platform, transforming them into intelligent agents. It doesn't just enable communication - it converts any device, from legacy tractors to modern IoT sensors, into autonomous AI agents that can think, coordinate, and optimize your farm operations. Think of it as the technology that gives your equipment intelligence and the ability to work together seamlessly.
+        Kesherat-Link es el puente que conecta el hardware y software de tu granja a nuestra plataforma de IA, transformándolos en agentes inteligentes. No solo habilita la comunicación - convierte cualquier dispositivo, desde tractores antiguos hasta sensores IoT modernos, en agentes de IA autónomos que pueden pensar, coordinarse y optimizar las operaciones de tu granja. Piénsalo como la tecnología que le da inteligencia a tu equipo y la capacidad de trabajar juntos sin problemas.
       </p>
     </div>
 
@@ -473,32 +450,32 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
         </svg>
-        Key Features
+        Características Clave
       </h2>
       <div class="grid">
         <div class="card">
-          <h3>Hardware Agnostic</h3>
-          <p>Works with any brand, any model, any age. From John Deere to custom-built sensors, if it has data, we can connect it.</p>
+          <h3>Agnóstico de Hardware</h3>
+          <p>Funciona con cualquier marca, modelo o antigüedad. Desde John Deere hasta sensores personalizados, si tiene datos, podemos conectarlo.</p>
         </div>
         <div class="card">
-          <h3>Real-Time Integration</h3>
-          <p>Instant data synchronization across all your devices. No delays, no manual uploads, just seamless connectivity.</p>
+          <h3>Integración en Tiempo Real</h3>
+          <p>Sincronización instantánea de datos en todos tus dispositivos. Sin retrasos, sin cargas manuales, solo conectividad perfecta.</p>
         </div>
         <div class="card">
-          <h3>Secure Communication</h3>
-          <p>Enterprise-grade encryption ensures your farm data stays private and protected at all times.</p>
+          <h3>Comunicación Segura</h3>
+          <p>Encriptación de nivel empresarial garantiza que los datos de tu granja permanezcan privados y protegidos en todo momento.</p>
         </div>
         <div class="card">
-          <h3>Easy Installation</h3>
-          <p>Plug-and-play adapters for most equipment. Professional installation support available for complex setups.</p>
+          <h3>Instalación Fácil</h3>
+          <p>Adaptadores plug-and-play para la mayoría del equipo. Soporte de instalación profesional disponible para configuraciones complejas.</p>
         </div>
         <div class="card">
-          <h3>Scalable Architecture</h3>
-          <p>Start with one device or connect hundreds. The system grows with your farm's needs.</p>
+          <h3>Arquitectura Escalable</h3>
+          <p>Comienza con un dispositivo o conecta cientos. El sistema crece con las necesidades de tu granja.</p>
         </div>
         <div class="card">
-          <h3>API Access</h3>
-          <p>Full API access for custom integrations and third-party applications.</p>
+          <h3>Acceso API</h3>
+          <p>Acceso completo a API para integraciones personalizadas y aplicaciones de terceros.</p>
         </div>
       </div>
     </div>
@@ -508,14 +485,14 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
           <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
         </svg>
-        How It Works
+        Cómo Funciona
       </h2>
       <ul>
-        <li><strong>Step 1:</strong> Send your device data to our MQTT portals or REST APIs - we support standard protocols for easy integration</li>
-        <li><strong>Step 2:</strong> Your devices automatically register with the Kesherat platform</li>
-        <li><strong>Step 3:</strong> AI agents are created for each device based on its capabilities and data streams</li>
-        <li><strong>Step 4:</strong> Start commanding your farm through natural language in AgroMonitor</li>
-        <li><strong>Step 5:</strong> Watch as your equipment coordinates autonomously to optimize operations</li>
+        <li><strong>Paso 1:</strong> Envía los datos de tus dispositivos a nuestros portales MQTT o APIs REST - soportamos protocolos estándar para una integración fácil</li>
+        <li><strong>Paso 2:</strong> Tus dispositivos se registran automáticamente en la plataforma Kesherat</li>
+        <li><strong>Paso 3:</strong> Se crean agentes de IA para cada dispositivo basados en sus capacidades y flujos de datos</li>
+        <li><strong>Paso 4:</strong> Comienza a comandar tu granja a través de lenguaje natural en AgroMonitor</li>
+        <li><strong>Paso 5:</strong> Observa cómo tu equipo se coordina autónomamente para optimizar las operaciones</li>
       </ul>
       <p style="margin-top: 20px; padding: 20px; background: rgba(37, 99, 235, 0.15); border-left: 4px solid #3b82f6; border-radius: 8px;">
         <strong>
@@ -524,13 +501,13 @@
             <line x1="12" y1="16" x2="12" y2="12"/>
             <line x1="12" y1="8" x2="12.01" y2="8"/>
           </svg>
-          Need help getting started?
-        </strong> Contact us for detailed integration documentation, MQTT broker details, API endpoints, and technical support. We'll guide you through the entire setup process.
+          ¿Necesitas ayuda para comenzar?
+        </strong> Contáctanos para documentación detallada de integración, detalles del broker MQTT, endpoints de API y soporte técnico. Te guiaremos a través de todo el proceso de configuración.
       </p>
     </div>
 
     <div class="visual">
-      <img src="/Kesherat-Link.png" alt="Kesherat-Link Platform Architecture">
+      <img src="/Kesherat-Link.png" alt="Arquitectura de la Plataforma Kesherat-Link">
     </div>
 
     <div class="section" style="border: 2px solid rgba(37, 99, 235, 0.5); border-radius: 12px; padding: 40px; margin-top: 60px;">
@@ -541,10 +518,10 @@
           <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
           <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
         </svg>
-        Hardware Providers: Join Our Ecosystem
+        Proveedores de Hardware: Únete a Nuestro Ecosistema
       </h2>
       <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto 30px; color: rgba(255, 255, 255, 0.9);">
-        Are you a hardware manufacturer or provider? Partner with Kesherat to offer your products as intelligent, AI-powered agents to our growing customer base.
+        ¿Eres fabricante o proveedor de hardware? Asóciate con Kesherat para ofrecer tus productos como agentes inteligentes con IA a nuestra creciente base de clientes.
       </p>
       <div class="grid" style="margin-top: 30px;">
         <div class="card">
@@ -554,9 +531,9 @@
               <line x1="2" y1="12" x2="22" y2="12"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
-            Expand Your Market
+            Expande Tu Mercado
           </h3>
-          <p>Reach thousands of farmers looking for agentized hardware solutions through our marketplace.</p>
+          <p>Alcanza miles de agricultores que buscan soluciones de hardware agentizado a través de nuestro marketplace.</p>
         </div>
         <div class="card">
           <h3>
@@ -564,18 +541,18 @@
               <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
             </svg>
-            AI-Powered Products
+            Productos con IA
           </h3>
-          <p>Transform your hardware into intelligent agents that customers can command through natural language.</p>
+          <p>Transforma tu hardware en agentes inteligentes que los clientes pueden comandar a través de lenguaje natural.</p>
         </div>
         <div class="card">
           <h3>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
             </svg>
-            Easy Integration
+            Integración Fácil
           </h3>
-          <p>We handle the AI layer - you focus on building great hardware. Simple API integration gets you started.</p>
+          <p>Nosotros manejamos la capa de IA - tú te enfocas en construir gran hardware. Una integración API simple te pone en marcha.</p>
         </div>
         <div class="card">
           <h3>
@@ -584,20 +561,20 @@
               <line x1="18" y1="20" x2="18" y2="4"/>
               <line x1="6" y1="20" x2="6" y2="16"/>
             </svg>
-            Grow Together
+            Crecer Juntos
           </h3>
-          <p>Join a marketplace of agentized hardware and grow your business alongside the future of agriculture.</p>
+          <p>Únete a un marketplace de hardware agentizado y haz crecer tu negocio junto al futuro de la agricultura.</p>
         </div>
       </div>
       <div style="text-align: center; margin-top: 40px;">
         <a href="/#demo-form" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); transition: all 0.3s ease;">
-          Become a Hardware Partner →
+          Conviértete en Socio de Hardware →
         </a>
       </div>
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
-      <a href="/" class="back-button">← Back to Home</a>
+      <a href="/" class="back-button">← Volver al Inicio</a>
     </div>
   </div>
 </body>

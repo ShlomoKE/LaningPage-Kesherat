@@ -43,11 +43,10 @@ export default function Navbar() {
 
         <ul className={`navbar-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <li><a onClick={() => scrollToSection('hero')}>{t.home}</a></li>
-          <li><a onClick={() => scrollToSection('problems')}>{t.problems}</a></li>
-          <li><a onClick={() => scrollToSection('solution')}>{t.solution}</a></li>
           <li><a onClick={() => scrollToSection('agromonitor')}>{t.agromonitor}</a></li>
-          <li><a href="/kesherat-link.html">{t.kesheratLink}</a></li>
-          <li><a href="/about-us.html">{t.aboutUs}</a></li>
+          <li><a href={language === 'en' ? '/kesherat-link.html' : '/kesherat-link-es.html'}>{t.kesheratLink}</a></li>
+          <li><a href={language === 'en' ? '/other-projects.html' : '/other-projects-es.html'}>{t.otherProjects}</a></li>
+          <li><a href={language === 'en' ? '/about-us.html' : '/about-us-es.html'}>{t.aboutUs}</a></li>
           <li><a onClick={() => scrollToSection('demo-form')} className="nav-cta">{t.requestDemo}</a></li>
           <li>
             <button onClick={toggleLanguage} className="language-toggle" aria-label="Toggle language">

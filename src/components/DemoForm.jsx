@@ -10,6 +10,7 @@ export default function DemoForm() {
     email: '',
     company: '',
     phone: '',
+    projectType: '',
     farmSize: '',
     message: ''
   })
@@ -49,6 +50,7 @@ export default function DemoForm() {
             email: '',
             company: '',
             phone: '',
+            projectType: '',
             farmSize: '',
             message: ''
           })
@@ -194,20 +196,37 @@ export default function DemoForm() {
                 </div>
               </div>
 
-              <div className="form-group">
-                <label htmlFor="farmSize">{t.form.farmSize}</label>
-                <select
-                  id="farmSize"
-                  name="farmSize"
-                  value={formData.farmSize}
-                  onChange={handleChange}
-                >
-                  <option value="">{t.form.farmSizeOptions.select}</option>
-                  <option value="0-50">{t.form.farmSizeOptions.small}</option>
-                  <option value="50-200">{t.form.farmSizeOptions.medium}</option>
-                  <option value="200-500">{t.form.farmSizeOptions.large}</option>
-                  <option value="500+">{t.form.farmSizeOptions.xlarge}</option>
-                </select>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="projectType">{t.form.projectType} {t.form.required}</label>
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">{t.form.projectTypeOptions.select}</option>
+                    <option value="agricultural">{t.form.projectTypeOptions.agricultural}</option>
+                    <option value="industrial">{t.form.projectTypeOptions.industrial}</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="farmSize">{t.form.farmSize}</label>
+                  <select
+                    id="farmSize"
+                    name="farmSize"
+                    value={formData.farmSize}
+                    onChange={handleChange}
+                  >
+                    <option value="">{t.form.farmSizeOptions.select}</option>
+                    <option value="0-50">{t.form.farmSizeOptions.small}</option>
+                    <option value="50-200">{t.form.farmSizeOptions.medium}</option>
+                    <option value="200-500">{t.form.farmSizeOptions.large}</option>
+                    <option value="500+">{t.form.farmSizeOptions.xlarge}</option>
+                  </select>
+                </div>
               </div>
 
               <div className="form-group">
