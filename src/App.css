@@ -349,6 +349,23 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-title-main {
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -2px;
+}
+
+.hero-title-sub {
+  font-size: 5.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
 }
 
 .hero-logo-container {
@@ -992,6 +1009,99 @@ body {
 .kesherat-green {
   color: #10b981;
   text-shadow: 2px 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.industry-blue {
+  color: #3b82f6;
+  text-shadow: 2px 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Hero Industry Specific Styles */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.rotating-messages {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.rotating-message {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero-cta {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.2);
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.hero-cta:hover {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-container {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Result Box */
@@ -2008,6 +2118,17 @@ body {
   .agromonitor-screenshot {
     max-width: 100%;
   }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .hero-title-main,
+  .hero-title-sub {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2056,6 +2177,29 @@ body {
   .hero-buttons {
     flex-direction: column;
     margin-top: 25px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .hero-title-main,
+  .hero-title-sub {
+    font-size: 3rem;
+  }
+
+  .rotating-message {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-visual {
+    order: -1;
   }
 
   .cta-button {
@@ -2134,6 +2278,19 @@ body {
 
   .hero-logo {
     max-width: 280px;
+  }
+
+  .hero-title-main,
+  .hero-title-sub {
+    font-size: 2.2rem;
+  }
+
+  .rotating-message {
+    font-size: 0.9rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
   }
 
   .kesherat-logo {

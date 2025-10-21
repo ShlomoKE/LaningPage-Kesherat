@@ -1,19 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { usePackage } from '../contexts/PackageContext'
 import { translations } from '../translations'
 
 export default function DemoForm() {
   const { language } = useLanguage()
   const t = translations[language].demo
+  const { selectedPackage } = usePackage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     phone: '',
+    sector: '',
     projectType: '',
+    package: '',
     farmSize: '',
     message: ''
   })
+
+  // Update form data when package is selected from pricing
+  useEffect(() => {
+    if (selectedPackage) {
+      setFormData(prev => ({
+        ...prev,
+        package: selectedPackage
+      }))
+    }
+  }, [selectedPackage])
 
   const [submitted, setSubmitted] = useState(false)
 
@@ -50,7 +64,9 @@ export default function DemoForm() {
             email: '',
             company: '',
             phone: '',
+            sector: '',
             projectType: '',
+            package: '',
             farmSize: '',
             message: ''
           })
@@ -198,6 +214,21 @@ export default function DemoForm() {
 
               <div className="form-row">
                 <div className="form-group">
+                  <label htmlFor="sector">{t.form.sector} {t.form.required}</label>
+                  <select
+                    id="sector"
+                    name="sector"
+                    value={formData.sector}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">{t.form.sectorOptions.select}</option>
+                    <option value="agriculture">{t.form.sectorOptions.agriculture}</option>
+                    <option value="industry">{t.form.sectorOptions.industry}</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
                   <label htmlFor="projectType">{t.form.projectType} {t.form.required}</label>
                   <select
                     id="projectType"
@@ -209,6 +240,25 @@ export default function DemoForm() {
                     <option value="">{t.form.projectTypeOptions.select}</option>
                     <option value="agricultural">{t.form.projectTypeOptions.agricultural}</option>
                     <option value="industrial">{t.form.projectTypeOptions.industrial}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="package">{t.form.package}</label>
+                  <select
+                    id="package"
+                    name="package"
+                    value={formData.package}
+                    onChange={handleChange}
+                  >
+                    <option value="">{t.form.packageOptions.select}</option>
+                    <option value="Paquete Tractor">{t.form.packageOptions.tractor}</option>
+                    <option value="Light">{t.form.packageOptions.light}</option>
+                    <option value="Pro">{t.form.packageOptions.pro}</option>
+                    <option value="Deluxe">{t.form.packageOptions.deluxe}</option>
+                    <option value="Enterprise">{t.form.packageOptions.enterprise}</option>
                   </select>
                 </div>
 

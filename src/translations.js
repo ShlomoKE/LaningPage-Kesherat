@@ -12,6 +12,14 @@ export const translations = {
       aboutUs: 'About Us',
       requestDemo: 'Request Demo'
     },
+
+    // Navbar Industry
+    navIndustry: {
+      home: 'Home',
+      k1Monitor: 'K1 Monitor',
+      customProjects: 'Custom Projects',
+      requestDemo: 'Request Demo'
+    },
     
     // Hero
     hero: {
@@ -49,7 +57,86 @@ export const translations = {
         }
       ]
     },
-    
+
+    // Hero Industry
+    heroIndustry: {
+      title: {
+        main: 'AGENTIC',
+        sub: 'INDUSTRY'
+      },
+      rotatingMessages: [
+        'Temperature Sensor 3: Tell me the temperature variations in production line 3 during the last shift',
+        'Pressure System B: Report any pressure anomalies detected in sector B',
+        'Vibration Monitor 7: Predict when motor 7 will need maintenance',
+        'Flow Sensor 2: Report how much flow passes during the night from 2 to 5 am',
+        'Quality System: Identify defects in products from batch #4521'
+      ],
+      description: 'We transform your industrial sensors and equipment into intelligent agents that monitor, predict and optimize your operation 24/7',
+      cta: 'Request Industrial Demo'
+    },
+
+    // Project Types
+    projectTypes: {
+      title: 'Types of Projects',
+      automation: {
+        title: 'Manufacturing Line Automation',
+        description: 'We design and implement intelligent automation systems for production lines, integrating sensors and actuators for complete control and optimization.'
+      },
+      circuits: {
+        title: 'Advanced Circuits',
+        description: 'Custom development of electronic circuits and control systems for specific industrial applications, from prototyping to mass production.'
+      },
+      monitoring: {
+        title: 'Large-Scale Monitoring Systems',
+        description: 'Implementation of comprehensive monitoring systems with IoT sensors, real-time data analysis, and predictive alerts for industrial facilities.'
+      },
+      quoteButton: 'Request Quote'
+    },
+
+    // Demo Form Industry
+    demoIndustry: {
+      title: 'Request a Quote',
+      subtitle: 'Tell us about your industrial project and we\'ll get back to you with a customized solution',
+      form: {
+        name: 'Full Name',
+        namePlaceholder: 'Juan Pérez',
+        email: 'Email',
+        emailPlaceholder: 'juan@company.com',
+        company: 'Company',
+        companyPlaceholder: 'Your Company Name',
+        phone: 'Phone',
+        phonePlaceholder: '+52 123 456 7890',
+        projectType: 'Project Type',
+        projectTypeOptions: {
+          select: 'Select project type',
+          automation: 'Manufacturing Line Automation',
+          circuits: 'Advanced Circuits',
+          monitoring: 'Large-Scale Monitoring Systems',
+          k1monitor: 'K1 Monitor',
+          custom: 'Custom Project'
+        },
+        industryType: 'Industry Type',
+        industryTypeOptions: {
+          select: 'Select industry type',
+          manufacturing: 'Manufacturing',
+          food: 'Food & Beverage',
+          automotive: 'Automotive',
+          pharmaceutical: 'Pharmaceutical',
+          energy: 'Energy',
+          other: 'Other'
+        },
+        message: 'Project Details',
+        messagePlaceholder: 'Tell us about your project, specific needs, timeline, etc.',
+        submit: 'Request Quote',
+        privacy: 'By submitting this form, you agree to our Privacy Policy. We\'ll only use your information to contact you about your project.',
+        required: '*'
+      },
+      success: {
+        title: 'Thank You!',
+        message: 'We\'ve received your request. Our team will contact you within 24 hours to discuss your industrial project.'
+      }
+    },
+
     // Problems
     problems: {
       title: 'The Problem',
@@ -128,7 +215,9 @@ export const translations = {
         email: 'Email',
         company: 'Company/Farm Name',
         phone: 'Phone Number',
+        sector: 'Sector',
         projectType: 'Project Type',
+        package: 'Interested Package',
         farmSize: 'Farm Size (hectares)',
         message: 'Tell us about your needs',
         placeholders: {
@@ -138,10 +227,23 @@ export const translations = {
           phone: '+1 (555) 000-0000',
           message: 'What challenges are you facing? What technologies do you currently use?'
         },
+        sectorOptions: {
+          select: 'Select sector',
+          agriculture: '🌾 Agriculture',
+          industry: '🏭 Industry'
+        },
         projectTypeOptions: {
           select: 'Select project type',
           agricultural: '🌾 Agricultural',
           industrial: '🏭 Industrial'
+        },
+        packageOptions: {
+          select: 'Select package',
+          tractor: 'Tractor Package (All-in-One)',
+          light: 'Light',
+          pro: 'Pro',
+          deluxe: 'Deluxe',
+          enterprise: 'Enterprise'
         },
         farmSizeOptions: {
           select: 'Select farm size',
@@ -188,6 +290,10 @@ export const translations = {
       getStarted: 'Get Started',
       note: 'All prices are in MXN. Custom packages available for large operations.',
       contractNote: 'Minimum 1 year contract',
+      expand: 'Expand features',
+      collapse: 'Collapse features',
+      mostPopular: 'Most Popular',
+      contactUs: 'Contact Us',
       allInOne: {
         selectorTitle: 'All-in-One Packages',
         title: 'Tractor Package',
@@ -198,21 +304,116 @@ export const translations = {
           sensor: 'Fuel level sensor and GPS',
           installation: 'Installation included',
           data: '4G data included',
-          platform: 'Intelligent AgroMonitor platform',
+          platform: 'AgroMonitor Platform - Basic',
           secondYear: 'Second year: 733 MXN monthly / tractor'
-        }
+        },
+        platformFeatures: [
+          'Interactive Real-Time Dashboard',
+          'Vehicle and GPS Route Management',
+          'Geofencing and Smart Field Zones',
+          'Automated Alert and Notification System',
+          'Agricultural Task Management (Kanban and Calendar)',
+          'Digital Agricultural Notebook',
+          'Activity Reports and Analysis',
+          'Integrated Weather and Environmental Monitoring (Open-Meteo)',
+          'AI Agricultural Copilot Chat',
+          'Dynamic Agents with LLM Code Generation',
+          'WhatsApp Integration for Alerts and Communication'
+        ]
       },
       softwareOnly: {
-        selectorTitle: 'Software Only',
-        title: 'Software Platform',
-        price: 'Contact Us',
-        period: '',
+        selectorTitle: 'Software Only'
+      },
+      softwareLight: {
+        title: 'Light',
+        price: '399 MXN',
+        period: '/ monthly',
+        description: 'Software only - No connected equipment',
         features: {
-          platform: 'AgroMonitor intelligent platform',
-          agents: 'Unlimited AI agents',
-          dashboard: 'Unified control dashboard',
-          support: 'Technical support',
+          platform: 'AgroMonitor Platform - Light',
+          support: 'Email technical support',
           updates: 'Free updates'
+        },
+        platformFeatures: [
+          'Digital Agricultural Notebook via WhatsApp',
+          'GPS Tracking with Mobile App',
+          'AI Agricultural Copilot Chat',
+          'Geofencing and Smart Field Zones',
+          'Agricultural Task Management (Kanban and Calendar)',
+          'Basic Activity Reports',
+          'Field Notes and Records'
+        ]
+      },
+      softwarePro: {
+        title: 'Pro',
+        price: '3,000 MXN',
+        period: '/ monthly',
+        limits: {
+          equipment: 'Up to 15 Connected Equipment'
+        },
+        features: {
+          platform: 'AgroMonitor Platform - Pro',
+          support: 'Priority technical support',
+          updates: 'Free updates and new features'
+        },
+        platformFeatures: [
+          'Interactive Real-Time Dashboard',
+          'Vehicle and GPS Route Management',
+          'Geofencing and Smart Field Zones',
+          'Automated Alert and Notification System',
+          'Agricultural Task Management (Kanban and Calendar)',
+          'Digital Agricultural Notebook',
+          'Activity Reports and Analysis',
+          'Integrated Weather and Environmental Monitoring (Open-Meteo)',
+          'AI Agricultural Copilot Chat',
+          'Dynamic Agents with LLM Code Generation',
+          'WhatsApp Integration for Alerts and Communication'
+        ]
+      },
+      softwareDeluxe: {
+        title: 'Deluxe',
+        price: '6,999 MXN',
+        period: '/ monthly',
+        limits: {
+          equipment: 'Up to 35 Connected Equipment'
+        },
+        features: {
+          platform: 'AgroMonitor Platform - Deluxe',
+          support: 'Dedicated technical support 24/7',
+          updates: 'Free updates and early access to new features',
+          training: 'Personalized training and onboarding'
+        },
+        platformFeatures: [
+          'Interactive Real-Time Dashboard',
+          'Vehicle and GPS Route Management',
+          'Geofencing and Smart Field Zones',
+          'Automated Alert and Notification System',
+          'Agricultural Task Management (Kanban and Calendar)',
+          'Digital Agricultural Notebook',
+          'Activity Reports and Analysis',
+          'Integrated Weather and Environmental Monitoring (Open-Meteo)',
+          'AI Agricultural Copilot Chat',
+          'Dynamic Agents with LLM Code Generation',
+          'WhatsApp Integration for Alerts and Communication'
+        ]
+      },
+      softwareEnterprise: {
+        title: 'Enterprise',
+        price: 'Custom Pricing',
+        description: 'Tailored solutions for large-scale operations with specific needs',
+        limits: {
+          unlimited: '∞ Unlimited Connected Equipment'
+        },
+        features: {
+          allFeatures: 'All Deluxe features included',
+          aiCopilot: 'AI Agricultural Copilot Chat',
+          geofencing: 'Geofencing and Smart Field Zones',
+          taskManagement: 'Agricultural Task Management (Kanban and Calendar)',
+          custom: 'Custom development and integrations',
+          dedicated: 'Dedicated account manager',
+          sla: 'Custom SLA and guaranteed uptime',
+          onboarding: 'Complete onboarding and migration',
+          integration: 'Integration with existing systems (ERP, etc.)'
         }
       }
     },
@@ -322,6 +523,14 @@ export const translations = {
       aboutUs: 'Sobre Nosotros',
       requestDemo: 'Solicitar Demo'
     },
+
+    // Navbar Industry
+    navIndustry: {
+      home: 'Inicio',
+      k1Monitor: 'K1 Monitor',
+      customProjects: 'Proyectos a Medida',
+      requestDemo: 'Solicitar Demo'
+    },
     
     // Hero
     hero: {
@@ -359,7 +568,86 @@ export const translations = {
         }
       ]
     },
-    
+
+    // Hero Industry
+    heroIndustry: {
+      title: {
+        main: 'INDUSTRIA',
+        sub: 'AGÉNTICA'
+      },
+      rotatingMessages: [
+        'Sensor de Temperatura 3: Dime las variaciones de temperatura en la línea de producción 3 durante el último turno',
+        'Sistema de Presión B: Reporta cualquier anomalía de presión detectada en el sector B',
+        'Monitor de Vibración 7: Predice cuándo el motor 7 necesitará mantenimiento',
+        'Sensor de Flujo 2: Reporta cuánto flujo pasa durante la noche de 2 a 5 am',
+        'Sistema de Calidad: Identifica defectos en productos del lote #4521'
+      ],
+      description: 'Transformamos tus sensores industriales y equipos en agentes inteligentes que monitorean, predicen y optimizan tu operación 24/7',
+      cta: 'Solicitar Demo Industrial'
+    },
+
+    // Project Types
+    projectTypes: {
+      title: 'Tipos de Proyectos',
+      automation: {
+        title: 'Automatización de Líneas de Manufactura',
+        description: 'Diseñamos e implementamos sistemas de automatización inteligente para líneas de producción, integrando sensores y actuadores para control y optimización completa.'
+      },
+      circuits: {
+        title: 'Circuitos Avanzados',
+        description: 'Desarrollo personalizado de circuitos electrónicos y sistemas de control para aplicaciones industriales específicas, desde prototipado hasta producción en masa.'
+      },
+      monitoring: {
+        title: 'Sistemas de Monitoreo a Gran Escala',
+        description: 'Implementación de sistemas de monitoreo integral con sensores IoT, análisis de datos en tiempo real y alertas predictivas para instalaciones industriales.'
+      },
+      quoteButton: 'Cotizar Proyecto'
+    },
+
+    // Demo Form Industry
+    demoIndustry: {
+      title: 'Solicitar Cotización',
+      subtitle: 'Cuéntanos sobre tu proyecto industrial y te responderemos con una solución personalizada',
+      form: {
+        name: 'Nombre Completo',
+        namePlaceholder: 'Juan Pérez',
+        email: 'Correo Electrónico',
+        emailPlaceholder: 'juan@empresa.com',
+        company: 'Empresa',
+        companyPlaceholder: 'Nombre de tu Empresa',
+        phone: 'Teléfono',
+        phonePlaceholder: '+52 123 456 7890',
+        projectType: 'Tipo de Proyecto',
+        projectTypeOptions: {
+          select: 'Selecciona tipo de proyecto',
+          automation: 'Automatización de Líneas de Manufactura',
+          circuits: 'Circuitos Avanzados',
+          monitoring: 'Sistemas de Monitoreo a Gran Escala',
+          k1monitor: 'K1 Monitor',
+          custom: 'Proyecto Personalizado'
+        },
+        industryType: 'Tipo de Industria',
+        industryTypeOptions: {
+          select: 'Selecciona tipo de industria',
+          manufacturing: 'Manufactura',
+          food: 'Alimentos y Bebidas',
+          automotive: 'Automotriz',
+          pharmaceutical: 'Farmacéutica',
+          energy: 'Energía',
+          other: 'Otro'
+        },
+        message: 'Detalles del Proyecto',
+        messagePlaceholder: 'Cuéntanos sobre tu proyecto, necesidades específicas, tiempos, etc.',
+        submit: 'Solicitar Cotización',
+        privacy: 'Al enviar este formulario, aceptas nuestra Política de Privacidad. Solo usaremos tu información para contactarte sobre tu proyecto.',
+        required: '*'
+      },
+      success: {
+        title: '¡Gracias!',
+        message: 'Hemos recibido tu solicitud. Nuestro equipo te contactará en las próximas 24 horas para discutir tu proyecto industrial.'
+      }
+    },
+
     // Problems
     problems: {
       title: 'El Problema',
@@ -438,7 +726,9 @@ export const translations = {
         email: 'Correo Electrónico',
         company: 'Empresa/Nombre de Granja',
         phone: 'Número de Teléfono',
+        sector: 'Sector',
         projectType: 'Tipo de Proyecto',
+        package: 'Paquete de Interés',
         farmSize: 'Tamaño de Granja (hectáreas)',
         message: 'Cuéntanos sobre tus necesidades',
         placeholders: {
@@ -448,10 +738,23 @@ export const translations = {
           phone: '+52 (555) 000-0000',
           message: '¿Qué desafíos enfrentas? ¿Qué tecnologías usas actualmente?'
         },
+        sectorOptions: {
+          select: 'Selecciona sector',
+          agriculture: '🌾 Agricultura',
+          industry: '🏭 Industrial'
+        },
         projectTypeOptions: {
           select: 'Selecciona tipo de proyecto',
           agricultural: '🌾 Agrícola',
           industrial: '🏭 Industrial'
+        },
+        packageOptions: {
+          select: 'Selecciona paquete',
+          tractor: 'Paquete Tractor (Todo Incluido)',
+          light: 'Light',
+          pro: 'Pro',
+          deluxe: 'Deluxe',
+          enterprise: 'Enterprise'
         },
         farmSizeOptions: {
           select: 'Selecciona tamaño de granja',
@@ -498,6 +801,10 @@ export const translations = {
       getStarted: 'Comenzar',
       note: 'Todos los precios están en MXN. Paquetes personalizados disponibles para operaciones grandes.',
       contractNote: 'Mínimo 1 año de contrato',
+      expand: 'Ver funciones',
+      collapse: 'Ocultar funciones',
+      mostPopular: 'Más Popular',
+      contactUs: 'Contáctanos',
       allInOne: {
         selectorTitle: 'Paquetes All-in-One',
         title: 'Paquete Tractor',
@@ -508,21 +815,116 @@ export const translations = {
           sensor: 'Sensor de nivel de combustible y GPS',
           installation: 'Instalación incluida',
           data: 'Datos 4G incluidos',
-          platform: 'Plataforma AgroMonitor inteligente',
+          platform: 'Plataforma AgroMonitor - Basic',
           secondYear: 'Segundo año: 733 MXN mensual / tractor'
-        }
+        },
+        platformFeatures: [
+          'Dashboard Interactivo en Tiempo Real',
+          'Gestión de Vehículos y Rutas GPS',
+          'Geofencing y Zonas de Campo Inteligentes',
+          'Sistema de Alertas y Notificaciones Automáticas',
+          'Gestión de Tareas Agrícolas (Kanban y Calendario)',
+          'Cuaderno Agrícola Digital',
+          'Reportes y Análisis de Actividad',
+          'Clima y Monitoreo Ambiental Integrado (Open-Meteo)',
+          'Chat IA Copiloto Agrícola',
+          'Agentes Dinámicos con Generación de Código LLM',
+          'Integración con WhatsApp para Alertas y Comunicación'
+        ]
       },
       softwareOnly: {
-        selectorTitle: 'Solo Software',
-        title: 'Plataforma de Software',
-        price: 'Contáctanos',
-        period: '',
+        selectorTitle: 'Solo Software'
+      },
+      softwareLight: {
+        title: 'Light',
+        price: '399 MXN',
+        period: '/ mensual',
+        description: 'Solo software - Sin equipos conectados',
         features: {
-          platform: 'Plataforma AgroMonitor inteligente',
-          agents: 'Agentes de IA ilimitados',
-          dashboard: 'Panel de control unificado',
-          support: 'Soporte técnico',
+          platform: 'Plataforma AgroMonitor - Light',
+          support: 'Soporte técnico por email',
           updates: 'Actualizaciones gratuitas'
+        },
+        platformFeatures: [
+          'Cuaderno de Campo Digital por WhatsApp',
+          'Rastreo GPS con App Móvil',
+          'Chat IA Copiloto Agrícola',
+          'Geofencing y Zonas de Campo Inteligentes',
+          'Gestión de Tareas Agrícolas (Kanban y Calendario)',
+          'Reportes Básicos de Actividad',
+          'Notas y Registros de Campo'
+        ]
+      },
+      softwarePro: {
+        title: 'Pro',
+        price: '3,000 MXN',
+        period: '/ mensual',
+        limits: {
+          equipment: 'Hasta 15 Equipos Conectados'
+        },
+        features: {
+          platform: 'Plataforma AgroMonitor - Pro',
+          support: 'Soporte técnico prioritario',
+          updates: 'Actualizaciones gratuitas y nuevas funciones'
+        },
+        platformFeatures: [
+          'Dashboard Interactivo en Tiempo Real',
+          'Gestión de Vehículos y Rutas GPS',
+          'Geofencing y Zonas de Campo Inteligentes',
+          'Sistema de Alertas y Notificaciones Automáticas',
+          'Gestión de Tareas Agrícolas (Kanban y Calendario)',
+          'Cuaderno Agrícola Digital',
+          'Reportes y Análisis de Actividad',
+          'Clima y Monitoreo Ambiental Integrado (Open-Meteo)',
+          'Chat IA Copiloto Agrícola',
+          'Agentes Dinámicos con Generación de Código LLM',
+          'Integración con WhatsApp para Alertas y Comunicación'
+        ]
+      },
+      softwareDeluxe: {
+        title: 'Deluxe',
+        price: '6,999 MXN',
+        period: '/ mensual',
+        limits: {
+          equipment: 'Hasta 35 Equipos Conectados'
+        },
+        features: {
+          platform: 'Plataforma AgroMonitor - Deluxe',
+          support: 'Soporte técnico dedicado 24/7',
+          updates: 'Actualizaciones gratuitas y acceso anticipado a nuevas funciones',
+          training: 'Capacitación personalizada y onboarding'
+        },
+        platformFeatures: [
+          'Dashboard Interactivo en Tiempo Real',
+          'Gestión de Vehículos y Rutas GPS',
+          'Geofencing y Zonas de Campo Inteligentes',
+          'Sistema de Alertas y Notificaciones Automáticas',
+          'Gestión de Tareas Agrícolas (Kanban y Calendario)',
+          'Cuaderno Agrícola Digital',
+          'Reportes y Análisis de Actividad',
+          'Clima y Monitoreo Ambiental Integrado (Open-Meteo)',
+          'Chat IA Copiloto Agrícola',
+          'Agentes Dinámicos con Generación de Código LLM',
+          'Integración con WhatsApp para Alertas y Comunicación'
+        ]
+      },
+      softwareEnterprise: {
+        title: 'Enterprise',
+        price: 'Precio Personalizado',
+        description: 'Soluciones a medida para operaciones de gran escala con necesidades específicas',
+        limits: {
+          unlimited: '∞ Equipos Conectados Ilimitados'
+        },
+        features: {
+          allFeatures: 'Todas las funciones de Deluxe incluidas',
+          aiCopilot: 'Chat IA Copiloto Agrícola',
+          geofencing: 'Geofencing y Zonas de Campo Inteligentes',
+          taskManagement: 'Gestión de Tareas Agrícolas (Kanban y Calendario)',
+          custom: 'Desarrollo personalizado e integraciones',
+          dedicated: 'Gerente de cuenta dedicado',
+          sla: 'SLA personalizado y tiempo de actividad garantizado',
+          onboarding: 'Onboarding completo y migración',
+          integration: 'Integración con sistemas existentes (ERP, etc.)'
         }
       }
     },

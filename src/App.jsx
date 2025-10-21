@@ -1,28 +1,26 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import { LanguageProvider } from './contexts/LanguageContext'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Problems from './components/Problems'
-import Solution from './components/Solution'
-import AgroMonitor from './components/AgroMonitor'
-import Pricing from './components/Pricing'
-import DemoForm from './components/DemoForm'
-import Footer from './components/Footer'
+import { PackageProvider } from './contexts/PackageContext'
+import SectorSelector from './components/SectorSelector'
+import AgriculturePage from './pages/AgriculturePage'
+import IndustryPage from './pages/IndustryPage'
 
 function App() {
   return (
     <LanguageProvider>
-      <div className="app">
-        <Navbar />
-        <Hero />
-        <Problems />
-        <Solution />
-        <AgroMonitor />
-        <Pricing />
-        <DemoForm />
-        <Footer />
-      </div>
+      <PackageProvider>
+        <Router>
+          <div className="app">
+            <Routes>
+              <Route path="/" element={<SectorSelector />} />
+              <Route path="/agriculture" element={<AgriculturePage />} />
+              <Route path="/industry" element={<IndustryPage />} />
+            </Routes>
+          </div>
+        </Router>
+      </PackageProvider>
     </LanguageProvider>
   )
 }

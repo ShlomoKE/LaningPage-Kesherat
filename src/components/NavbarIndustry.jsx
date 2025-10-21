@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
-export default function Navbar() {
+export default function NavbarIndustry() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { language, toggleLanguage } = useLanguage()
   const navigate = useNavigate()
-  const t = translations[language].nav
+  const t = translations[language].navIndustry
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,10 +49,8 @@ export default function Navbar() {
 
         <ul className={`navbar-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <li><a onClick={() => scrollToSection('hero')}>{t.home}</a></li>
-          <li><a onClick={() => scrollToSection('agromonitor')}>{t.agromonitor}</a></li>
-          <li><a href={language === 'en' ? '/kesherat-link.html' : '/kesherat-link-es.html'}>{t.kesheratLink}</a></li>
-          <li><a onClick={() => scrollToSection('pricing')}>{t.pricing}</a></li>
-          <li><a href={language === 'en' ? '/about-us.html' : '/about-us-es.html'}>{t.aboutUs}</a></li>
+          <li><a onClick={() => scrollToSection('k1-monitor')}>{t.k1Monitor}</a></li>
+          <li><a onClick={() => scrollToSection('custom-projects')}>{t.customProjects}</a></li>
           <li><a onClick={() => scrollToSection('demo-form')} className="nav-cta">{t.requestDemo}</a></li>
           <li>
             <button onClick={toggleLanguage} className="language-toggle" aria-label="Toggle language">
