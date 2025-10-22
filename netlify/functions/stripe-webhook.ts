@@ -2,8 +2,8 @@ import type { Handler } from '@netlify/functions';
 import Stripe from 'stripe';
 import { MongoClient } from 'mongodb';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { 
-  apiVersion: '2024-11-20.acacia' 
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2024-12-18.acacia'
 });
 
 type DB = {
@@ -47,7 +47,7 @@ const mongoDriver = (): DB => {
       // Create indexes
       await users.createIndex({ email: 1 }, { unique: true });
       await users.createIndex({ stripe_customer_id: 1 }, { unique: true, sparse: true });
-      await events.createIndex({ _id: 1 }, { unique: true });
+      // Note: _id is already unique by default, no need to create index
     },
     
     alreadyProcessed: async (id) => {
