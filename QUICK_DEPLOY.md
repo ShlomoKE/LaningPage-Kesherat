@@ -12,8 +12,8 @@ Agrega estas 4 variables:
 |----------|-------|
 | `STRIPE_SECRET_KEY` | `sk_live_...` (obtener de Stripe Dashboard) |
 | `STRIPE_WEBHOOK_SECRET` | `whsec_...` (obtener después de crear webhook) |
-| `MONGODB_URI` | `mongodb://mongo:fkhVtuloTnOVZsjWOGIFEfwRAuNZjGRh@tramway.proxy.rlwy.net:23784` |
-| `MONGODB_DB` | `kesherat` |
+| `MONGODB_URI` | Tu URI de MongoDB |
+| `MONGODB_DB` | Nombre de tu base de datos |
 
 ### 2️⃣ Desplegar el Código
 

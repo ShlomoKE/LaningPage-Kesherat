@@ -40,7 +40,7 @@ const mongoDriver = (): DB => {
     init: async () => {
       client = new MongoClient(process.env.MONGODB_URI!);
       await client.connect();
-      db = client.db(process.env.MONGODB_DB || 'kesherat');
+      db = client.db(process.env.MONGODB_DB!);
       users = db.collection('users');
       events = db.collection('stripe_events');
       

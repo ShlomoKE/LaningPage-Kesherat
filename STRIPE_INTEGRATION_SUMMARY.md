@@ -4,23 +4,19 @@
 
 ### Credenciales de Stripe
 ```
-Publishable Key: pk_live_51QYdnSBMbxePi3KAX1EriXEbEG2i6iIqQINorPQrp7eCduWs37h92hxuIOQiRcVtKZxlxE5OkIBuj5tRb6kORVKU00P9lEiH0j
 Secret Key: (configurar en Netlify como STRIPE_SECRET_KEY)
 Webhook Secret: (obtener de Stripe Dashboard y configurar como STRIPE_WEBHOOK_SECRET)
 ```
 
 ### Credenciales de MongoDB
 ```
-URI: mongodb://mongo:fkhVtuloTnOVZsjWOGIFEfwRAuNZjGRh@tramway.proxy.rlwy.net:23784
-Usuario: mongo
-Password: fkhVtuloTnOVZsjWOGIFEfwRAuNZjGRh
-Puerto: 27017
-Base de datos: kesherat
+URI: (configurar en Netlify como MONGODB_URI)
+Base de datos: (configurar en Netlify como MONGODB_DB)
 ```
 
 ### Payment Link
 ```
-URL: https://buy.stripe.com/3cI5kC2Vj26Qfvvd9pgfu00?locale=es
+URL: Configurado en el botón "7 Días Gratis"
 Prueba gratis: 7 días
 ```
 
@@ -33,8 +29,8 @@ Ve a: **Site settings > Environment variables** y agrega:
 ```bash
 STRIPE_SECRET_KEY=sk_live_...
 STRIPE_WEBHOOK_SECRET=whsec_...
-MONGODB_URI=mongodb://mongo:fkhVtuloTnOVZsjWOGIFEfwRAuNZjGRh@tramway.proxy.rlwy.net:23784
-MONGODB_DB=kesherat
+MONGODB_URI=mongodb://username:password@host:port
+MONGODB_DB=your_database_name
 ```
 
 ### 2. Configurar Webhook en Stripe

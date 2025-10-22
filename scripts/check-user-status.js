@@ -6,8 +6,13 @@
 import { MongoClient } from 'mongodb';
 import 'dotenv/config';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://mongo:fkhVtuloTnOVZsjWOGIFEfwRAuNZjGRh@tramway.proxy.rlwy.net:23784';
-const MONGODB_DB = process.env.MONGODB_DB || 'kesherat';
+const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_DB = process.env.MONGODB_DB;
+
+if (!MONGODB_URI || !MONGODB_DB) {
+  console.error('❌ Error: MONGODB_URI y MONGODB_DB deben estar configurados en las variables de entorno');
+  process.exit(1);
+}
 
 async function checkUserStatus(email) {
   const client = new MongoClient(MONGODB_URI);

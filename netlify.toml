@@ -15,9 +15,7 @@
   to = "/index.html"
   status = 200
 
-# Environment variables (set these in Netlify UI)
-# STRIPE_SECRET_KEY
-# STRIPE_WEBHOOK_SECRET
-# MONGODB_URI
-# MONGODB_DB
+# Environment variables must be set in Netlify UI:
+# Site settings > Environment variables
+# Required: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, MONGODB_URI, MONGODB_DB
 

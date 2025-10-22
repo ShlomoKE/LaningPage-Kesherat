@@ -12,8 +12,8 @@ STRIPE_SECRET_KEY=sk_live_...
 STRIPE_WEBHOOK_SECRET=whsec_...
 
 # MongoDB
-MONGODB_URI=mongodb://mongo:fkhVtuloTnOVZsjWOGIFEfwRAuNZjGRh@tramway.proxy.rlwy.net:23784
-MONGODB_DB=kesherat
+MONGODB_URI=mongodb://username:password@host:port
+MONGODB_DB=your_database_name
 ```
 
 ## 📡 Configurar Webhook en Stripe
