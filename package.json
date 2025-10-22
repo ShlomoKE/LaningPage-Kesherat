@@ -6,16 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check-user": "node scripts/check-user-status.js",
+    "list-users": "node scripts/list-users.js"
   },
   "devDependencies": {
+    "@types/node": "^24.9.1",
     "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.9.3",
     "vite": "^7.1.7"
   },
   "dependencies": {
+    "@netlify/functions": "^5.0.0",
+    "dotenv": "^17.2.3",
     "framer-motion": "^12.23.24",
+    "mongodb": "^6.20.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4"
+    "react-router-dom": "^7.9.4",
+    "stripe": "^19.1.0"
   }
 }

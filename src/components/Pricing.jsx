@@ -105,7 +105,12 @@ const Pricing = () => {
                 <li>{t.softwareLight.features.support}</li>
                 <li>{t.softwareLight.features.updates}</li>
               </ul>
-              <button className="pricing-button" onClick={() => handleGetStarted('Light')}>{t.getStarted}</button>
+              <button
+                className="pricing-button pricing-button-trial"
+                onClick={() => window.open('https://buy.stripe.com/3cI5kC2Vj26Qfvvd9pgfu00?locale=es', '_blank')}
+              >
+                {t.freeTrialButton}
+              </button>
             </div>
 
             {/* Software Pro */}
