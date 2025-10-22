@@ -109,4 +109,5 @@ Para ver qué está pasando con el webhook:
 - Ver todos los usuarios: `npm run list-users`
 - Documentación completa: `WEBHOOK_SETUP.md`
 - Resumen técnico: `STRIPE_INTEGRATION_SUMMARY.md`
+- Template de variables: `env.template` (copia a `.env` para desarrollo local)
 
