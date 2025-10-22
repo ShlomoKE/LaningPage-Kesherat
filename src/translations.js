@@ -318,7 +318,7 @@ export const translations = {
           'Integrated Weather and Environmental Monitoring (Open-Meteo)',
           'AI Agricultural Copilot Chat',
           'Dynamic Agents with LLM Code Generation',
-          'WhatsApp Integration for Alerts and Communication'
+          'Telegram Integration for Alerts and Communication'
         ]
       },
       softwareOnly: {
@@ -335,7 +335,7 @@ export const translations = {
           updates: 'Free updates'
         },
         platformFeatures: [
-          'Digital Agricultural Notebook via WhatsApp',
+          'Digital Agricultural Notebook via Telegram',
           'GPS Tracking with Mobile App',
           'AI Agricultural Copilot Chat',
           'Geofencing and Smart Field Zones',
@@ -367,7 +367,7 @@ export const translations = {
           'Integrated Weather and Environmental Monitoring (Open-Meteo)',
           'AI Agricultural Copilot Chat',
           'Dynamic Agents with LLM Code Generation',
-          'WhatsApp Integration for Alerts and Communication'
+          'Telegram Integration for Alerts and Communication'
         ]
       },
       softwareDeluxe: {
@@ -394,7 +394,7 @@ export const translations = {
           'Integrated Weather and Environmental Monitoring (Open-Meteo)',
           'AI Agricultural Copilot Chat',
           'Dynamic Agents with LLM Code Generation',
-          'WhatsApp Integration for Alerts and Communication'
+          'Telegram Integration for Alerts and Communication'
         ]
       },
       softwareEnterprise: {
@@ -829,7 +829,7 @@ export const translations = {
           'Clima y Monitoreo Ambiental Integrado (Open-Meteo)',
           'Chat IA Copiloto Agrícola',
           'Agentes Dinámicos con Generación de Código LLM',
-          'Integración con WhatsApp para Alertas y Comunicación'
+          'Integración con Telegram para Alertas y Comunicación'
         ]
       },
       softwareOnly: {
@@ -846,7 +846,7 @@ export const translations = {
           updates: 'Actualizaciones gratuitas'
         },
         platformFeatures: [
-          'Cuaderno de Campo Digital por WhatsApp',
+          'Cuaderno de Campo Digital por Telegram',
           'Rastreo GPS con App Móvil',
           'Chat IA Copiloto Agrícola',
           'Geofencing y Zonas de Campo Inteligentes',
@@ -878,7 +878,7 @@ export const translations = {
           'Clima y Monitoreo Ambiental Integrado (Open-Meteo)',
           'Chat IA Copiloto Agrícola',
           'Agentes Dinámicos con Generación de Código LLM',
-          'Integración con WhatsApp para Alertas y Comunicación'
+          'Integración con Telegram para Alertas y Comunicación'
         ]
       },
       softwareDeluxe: {
@@ -905,7 +905,7 @@ export const translations = {
           'Clima y Monitoreo Ambiental Integrado (Open-Meteo)',
           'Chat IA Copiloto Agrícola',
           'Agentes Dinámicos con Generación de Código LLM',
-          'Integración con WhatsApp para Alertas y Comunicación'
+          'Integración con Telegram para Alertas y Comunicación'
         ]
       },
       softwareEnterprise: {
