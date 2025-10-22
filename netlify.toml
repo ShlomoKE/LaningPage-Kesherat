@@ -4,7 +4,7 @@
   publish = "dist"
 
 [build.environment]
-  SECRETS_SCAN_OMIT_PATHS = "*.md,dist/**,*.html,src/**,package*.json"
+  SECRETS_SCAN_OMIT_PATHS = "*.md,dist/**,*.html,src/**,package*.json,vite.config.js"
 
 [functions]
   node_bundler = "esbuild"
