@@ -8,7 +8,7 @@ const Pricing = () => {
   const { language } = useLanguage()
   const t = translations[language].pricing
   const { setSelectedPackage: setGlobalPackage } = usePackage()
-  const [selectedPackage, setSelectedPackage] = useState('allInOne')
+  const [selectedPackage, setSelectedPackage] = useState('softwareOnly')
   const [showPlatformFeatures, setShowPlatformFeatures] = useState(false)
 
   const handleGetStarted = (packageName) => {
@@ -53,6 +53,7 @@ const Pricing = () => {
                 <span className="price-amount">{t.allInOne.price}</span>
                 <span className="price-period">{t.allInOne.period}</span>
               </div>
+              <p className="includes-note">{t.allInOne.includes}</p>
               <p className="contract-note">{t.contractNote}</p>
               <div className="pricing-discount">
                 <p>{t.allInOne.discount}</p>
@@ -91,7 +92,8 @@ const Pricing = () => {
         {selectedPackage === 'softwareOnly' && (
           <div className="pricing-content">
             {/* Software Light */}
-            <div className="pricing-card">
+            <div className="pricing-card pricing-card-featured">
+              <div className="featured-badge">{language === 'en' ? 'RECOMMENDED' : 'RECOMENDADO'}</div>
               <h3 className="pricing-card-title">{t.softwareLight.title}</h3>
               <div className="pricing-price">
                 <span className="price-amount">{t.softwareLight.price}</span>

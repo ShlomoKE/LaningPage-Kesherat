@@ -301,6 +301,7 @@ export const translations = {
         price: '1,352 MXN',
         period: '/ monthly',
         discount: 'Second year: 733 MXN monthly / tractor',
+        includes: 'Includes AgroMonitor Light',
         features: {
           sensor: 'Fuel level sensor and GPS',
           installation: 'Installation included',
@@ -813,6 +814,7 @@ export const translations = {
         price: '1,352 MXN',
         period: '/ mensual',
         discount: 'Segundo año: 733 MXN mensual / tractor',
+        includes: 'Incluye AgroMonitor Light',
         features: {
           sensor: 'Sensor de nivel de combustible y GPS',
           installation: 'Instalación incluida',
