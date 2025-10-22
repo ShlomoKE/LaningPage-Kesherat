@@ -18,7 +18,7 @@ async function testMongoDB() {
     console.error('❌ Error: MONGODB_URI y MONGODB_DB deben estar configurados');
     console.log('\n💡 Crea un archivo .env con:');
     console.log('MONGODB_URI=tu_uri_de_mongodb');
-    console.log('MONGODB_DB=kesherat\n');
+    console.log('MONGODB_DB=your_database_name\n');
     process.exit(1);
   }
 
