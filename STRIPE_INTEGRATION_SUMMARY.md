@@ -95,7 +95,7 @@ npm run check-user usuario@ejemplo.com
 ### Consulta directa en MongoDB
 ```javascript
 // Conectar a MongoDB
-use kesherat
+use your_database_name
 
 // Ver todos los usuarios
 db.users.find().pretty()

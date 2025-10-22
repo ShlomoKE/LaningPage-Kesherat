@@ -63,7 +63,7 @@ npm run check-user tu-email@ejemplo.com
 
 Opción B - En MongoDB directamente:
 ```javascript
-use kesherat
+use your_database_name
 db.users.findOne({ email: "tu-email@ejemplo.com" })
 ```
 

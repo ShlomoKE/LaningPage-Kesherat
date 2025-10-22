@@ -3,6 +3,9 @@
   functions = "netlify/functions"
   publish = "dist"
 
+[build.environment]
+  SECRETS_SCAN_OMIT_PATHS = "*.md,dist/**,*.html,src/**,package*.json"
+
 [functions]
   node_bundler = "esbuild"
 
