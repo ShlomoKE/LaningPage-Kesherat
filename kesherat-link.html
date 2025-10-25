@@ -67,6 +67,8 @@
     .navbar-logo {
       display: flex;
       align-items: center;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .navbar-logo-img {
@@ -398,11 +400,9 @@
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="navbar-container">
-      <div class="navbar-logo">
-        <a href="/">
-          <img src="/KesheratLogo.png" alt="Kesherat" class="navbar-logo-img">
-        </a>
-      </div>
+      <a href="/agriculture" class="navbar-logo">
+        <img src="/KesheratLogo.png" alt="Kesherat" class="navbar-logo-img">
+      </a>
 
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
         <span></span>
@@ -411,12 +411,13 @@
       </button>
 
       <ul class="navbar-menu" id="navbarMenu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#agromonitor">AgroMonitor</a></li>
+        <li><a href="/agriculture#hero">Home</a></li>
+        <li><a href="/agriculture#agromonitor">AgroMonitor</a></li>
+        <li><a href="/marketplace">Marketplace</a></li>
         <li><a href="/kesherat-link.html">Kesherat Link</a></li>
-        <li><a href="/other-projects.html">Other Projects</a></li>
+        <li><a href="/agriculture#pricing">Pricing</a></li>
         <li><a href="/about-us.html">About Us</a></li>
-        <li><a href="/#demo-form" class="nav-cta">Request Demo</a></li>
+        <li><a href="/agriculture#demo-form" class="nav-cta">Request Demo</a></li>
         <li>
           <a href="/kesherat-link-es.html" class="language-toggle">
             🇪🇸 ES

@@ -1390,15 +1390,16 @@ body {
   flex-wrap: wrap;
 }
 
-/* AgroMonitor Section */
+/* ========================================
+   AgroMonitor Section - Professional Design
+   ======================================== */
+
 .agromonitor {
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f36 50%, #0f1419 100%);
+  padding: 100px 20px 120px;
+  background: #0a0e14;
   color: var(--white);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .agromonitor::before {
@@ -1407,96 +1408,271 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
-  pointer-events: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .agromonitor-content {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-.agromonitor-header h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
+/* Header Section */
+.agromonitor-header-serious {
   text-align: center;
-  margin-bottom: 15px;
-  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.agromonitor-header .section-subtitle {
-  text-align: center;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 15px;
-}
-
-.agromonitor-description {
-  text-align: center;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 900px;
-  margin: 0 auto 40px;
-  padding: 0 20px;
-  font-weight: 400;
-}
-
-.highlight-text {
-  color: #3b82f6;
-  font-weight: 700;
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-/* Concept Box */
-.agromonitor-concept {
   margin-bottom: 80px;
 }
 
-.concept-box {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-  border: 2px solid rgba(16, 185, 129, 0.3);
-  border-radius: 20px;
-  padding: 50px;
-  text-align: center;
-  backdrop-filter: blur(20px);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.agromonitor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  margin-bottom: 24px;
 }
 
-.concept-icon {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  animation: rotate 10s linear infinite;
+.agromonitor-badge svg {
+  color: #10b981;
+  width: 16px;
+  height: 16px;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.concept-box h3 {
-  font-size: 2rem;
+.agromonitor-badge span {
+  font-size: 12px;
   font-weight: 700;
-  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   color: #10b981;
 }
 
-.concept-box p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
+.agromonitor-header-serious h2 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.agromonitor-subtitle-serious {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Main Layout: Image + Description */
+.agromonitor-main-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.agromonitor-image-section {
+  position: relative;
+}
+
+.agromonitor-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(59, 130, 246, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.agromonitor-dashboard-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.agromonitor-image-wrapper:hover .agromonitor-dashboard-image {
+  transform: scale(1.02);
+}
+
+.agromonitor-description-section {
+  padding: 20px 0;
+}
+
+.agromonitor-main-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* Stats Section */
+.agromonitor-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Agents Section */
+.agromonitor-agents-section {
+  margin-bottom: 80px;
+}
+
+.agents-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.agents-grid-serious {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.agent-card-serious {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.agent-card-serious:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.agent-icon-serious {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.agent-card-serious:hover .agent-icon-serious {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.agent-icon-serious svg {
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.agent-card-serious h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.agent-card-serious p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+/* Platform Features Section */
+.agromonitor-features-section {
+  margin-bottom: 60px;
+}
+
+.features-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.platform-features-serious {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-card-serious {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature-card-serious:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(16, 185, 129, 0.2);
+  transform: translateY(-5px);
+}
+
+.feature-card-serious img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.feature-card-serious h4 {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -0.3px;
 }
 
 /* Agents Grid */
@@ -1580,11 +1756,14 @@ body {
   margin-bottom: 0;
   text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .agromonitor-screenshot {
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 600px;
   border-radius: 16px;
   border: 2px solid rgba(16, 185, 129, 0.3);
   box-shadow:
@@ -1787,10 +1966,14 @@ body {
 
 .agromonitor-main-visual {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .agromonitor-main-visual img {
-  width: 100%;
+  width: 90%;
+  max-width: 600px;
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(59, 130, 246, 0.2);
@@ -1971,7 +2154,59 @@ body {
   margin: 0;
 }
 
+/* Responsive Design for AgroMonitor */
+@media (max-width: 1024px) {
+  .agromonitor-main-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .agents-grid-serious {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .agromonitor {
+    padding: 60px 20px 80px;
+  }
+
+  .agromonitor-header-serious h2 {
+    font-size: 36px;
+  }
+
+  .agromonitor-subtitle-serious {
+    font-size: 17px;
+  }
+
+  .agromonitor-main-description {
+    font-size: 16px;
+  }
+
+  .agromonitor-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .agents-section-title,
+  .features-section-title {
+    font-size: 28px;
+  }
+
+  .agents-grid-serious {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .platform-features-serious {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .agromonitor-two-column {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -2016,6 +2251,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  .agromonitor-header-serious h2 {
+    font-size: 32px;
+  }
+
   .agents-grid-professional {
     grid-template-columns: 1fr;
   }

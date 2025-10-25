@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -8,6 +8,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { language, toggleLanguage } = useLanguage()
   const navigate = useNavigate()
+  const location = useLocation()
   const t = translations[language].nav
 
   useEffect(() => {
@@ -18,16 +19,34 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setMobileMenuOpen(false)
+  const navigateToSection = (sectionId) => {
+    setMobileMenuOpen(false)
+
+    if (location.pathname === '/agriculture') {
+      // Si ya estamos en agriculture, solo hacer scroll
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      // Si estamos en otra página, navegar a agriculture y luego hacer scroll
+      navigate('/agriculture')
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
     }
   }
 
   const goHome = () => {
     navigate('/')
+  }
+
+  const goToMarketplace = () => {
+    navigate('/marketplace')
+    setMobileMenuOpen(false)
   }
 
   return (
@@ -48,12 +67,13 @@ export default function Navbar() {
         </button>
 
         <ul className={`navbar-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <li><a onClick={() => scrollToSection('hero')}>{t.home}</a></li>
-          <li><a onClick={() => scrollToSection('agromonitor')}>{t.agromonitor}</a></li>
+          <li><a onClick={() => navigateToSection('hero')}>{t.home}</a></li>
+          <li><a onClick={() => navigateToSection('agromonitor')}>{t.agromonitor}</a></li>
+          <li><a onClick={goToMarketplace}>{t.marketplace}</a></li>
           <li><a href={language === 'en' ? '/kesherat-link.html' : '/kesherat-link-es.html'}>{t.kesheratLink}</a></li>
-          <li><a onClick={() => scrollToSection('pricing')}>{t.pricing}</a></li>
+          <li><a onClick={() => navigateToSection('pricing')}>{t.pricing}</a></li>
           <li><a href={language === 'en' ? '/about-us.html' : '/about-us-es.html'}>{t.aboutUs}</a></li>
-          <li><a onClick={() => scrollToSection('demo-form')} className="nav-cta">{t.requestDemo}</a></li>
+          <li><a onClick={() => navigateToSection('demo-form')} className="nav-cta">{t.requestDemo}</a></li>
           <li>
             <button onClick={toggleLanguage} className="language-toggle" aria-label="Toggle language">
               {language === 'en' ? '🇪🇸 ES' : '🇺🇸 EN'}

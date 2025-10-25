@@ -79,6 +79,13 @@ export default function DemoForm() {
       })
   }
 
+  const getRealtimeFeature = () => {
+    const sector = formData.sector || 'agriculture'
+    return sector === 'industry'
+      ? t.why.features.realtime.industry
+      : t.why.features.realtime.agriculture
+  }
+
   const whyFeatures = [
     {
       id: 1,
@@ -119,8 +126,8 @@ export default function DemoForm() {
     },
     {
       id: 4,
-      title: t.why.features.realtime.title,
-      description: t.why.features.realtime.description,
+      title: getRealtimeFeature().title,
+      description: getRealtimeFeature().description,
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <line x1="18" y1="20" x2="18" y2="10"/>
@@ -262,21 +269,23 @@ export default function DemoForm() {
                   </select>
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="farmSize">{t.form.farmSize}</label>
-                  <select
-                    id="farmSize"
-                    name="farmSize"
-                    value={formData.farmSize}
-                    onChange={handleChange}
-                  >
-                    <option value="">{t.form.farmSizeOptions.select}</option>
-                    <option value="0-50">{t.form.farmSizeOptions.small}</option>
-                    <option value="50-200">{t.form.farmSizeOptions.medium}</option>
-                    <option value="200-500">{t.form.farmSizeOptions.large}</option>
-                    <option value="500+">{t.form.farmSizeOptions.xlarge}</option>
-                  </select>
-                </div>
+                {formData.sector === 'agriculture' && (
+                  <div className="form-group">
+                    <label htmlFor="farmSize">{t.form.farmSize}</label>
+                    <select
+                      id="farmSize"
+                      name="farmSize"
+                      value={formData.farmSize}
+                      onChange={handleChange}
+                    >
+                      <option value="">{t.form.farmSizeOptions.select}</option>
+                      <option value="0-50">{t.form.farmSizeOptions.small}</option>
+                      <option value="50-200">{t.form.farmSizeOptions.medium}</option>
+                      <option value="200-500">{t.form.farmSizeOptions.large}</option>
+                      <option value="500+">{t.form.farmSizeOptions.xlarge}</option>
+                    </select>
+                  </div>
+                )}
               </div>
 
               <div className="form-group">

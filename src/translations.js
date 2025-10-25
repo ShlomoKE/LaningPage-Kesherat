@@ -6,6 +6,7 @@ export const translations = {
       problems: 'Problems',
       solution: 'Solution',
       agromonitor: 'AgroMonitor',
+      marketplace: 'Marketplace',
       kesheratLink: 'Kesherat Link',
       otherProjects: 'Other Projects',
       pricing: 'Pricing',
@@ -276,8 +277,14 @@ export const translations = {
             description: 'Autonomous smart decisions'
           },
           realtime: {
-            title: 'Real-time Data',
-            description: 'Live farm monitoring'
+            agriculture: {
+              title: 'Real-time Data',
+              description: 'Live farm monitoring'
+            },
+            industry: {
+              title: 'Real-time Data',
+              description: 'Live facility monitoring'
+            }
           }
         }
       }
@@ -422,7 +429,7 @@ export const translations = {
 
     // Footer
     footer: {
-      tagline: 'Paving the way into agentic agriculture',
+      tagline: 'Turning every device into an agent, insight into action.',
       product: {
         title: 'Product',
         features: 'Features',
@@ -469,6 +476,48 @@ export const translations = {
           'Make informed decisions with real-time data',
           'Scale your operations effortlessly'
         ]
+      }
+    },
+
+    // Marketplace
+    marketplace: {
+      title: 'Partner Solutions',
+      subtitle: 'Enterprise-grade integrations designed to scale your agricultural operations',
+      learnMoreButton: 'Learn More',
+      picking: {
+        title: 'Picking & Operations',
+        category: 'Picking & Operations',
+        features: [
+          'AI-powered fruit recognition',
+          'Automated harvesting robots',
+          'Real-time task coordination',
+          'Yield tracking integration'
+        ]
+      },
+      gps: {
+        title: 'GPS Fleet Monitoring',
+        category: 'GPS Fleet Monitoring',
+        features: [
+          'Real-time GPS tracking',
+          'Route optimization',
+          'Fuel consumption analytics',
+          'Fleet management dashboard'
+        ]
+      },
+      yield: {
+        title: 'Yield Intelligence',
+        category: 'Yield Intelligence',
+        features: [
+          'ML-based yield forecasting',
+          'Harvest planning tools',
+          'Sensor data integration',
+          'Predictive analytics'
+        ]
+      },
+      becomePartner: {
+        title: 'Become a Partner',
+        description: 'Join our ecosystem of agricultural technology providers. Integrate your solutions with AgroMonitor and reach thousands of farmers worldwide.',
+        ctaButton: 'Apply Now'
       }
     },
 
@@ -519,6 +568,7 @@ export const translations = {
       problems: 'Problemas',
       solution: 'Solución',
       agromonitor: 'AgroMonitor',
+      marketplace: 'Marketplace',
       kesheratLink: 'Kesherat Link',
       otherProjects: 'Otros Proyectos',
       pricing: 'Precios',
@@ -789,8 +839,14 @@ export const translations = {
             description: 'Decisiones inteligentes autónomas'
           },
           realtime: {
-            title: 'Datos en Tiempo Real',
-            description: 'Monitoreo en vivo de la granja'
+            agriculture: {
+              title: 'Datos en Tiempo Real',
+              description: 'Monitoreo en vivo de la granja'
+            },
+            industry: {
+              title: 'Datos en Tiempo Real',
+              description: 'Monitoreo en vivo de la instalación'
+            }
           }
         }
       }
@@ -935,7 +991,7 @@ export const translations = {
 
     // Footer
     footer: {
-      tagline: 'Abriendo camino hacia la agricultura agéntica',
+      tagline: 'Convirtiendo cada dispositivo en un agente, información en acción.',
       product: {
         title: 'Producto',
         features: 'Características',
@@ -982,6 +1038,48 @@ export const translations = {
           'Toma decisiones informadas con datos en tiempo real',
           'Escala tus operaciones sin esfuerzo'
         ]
+      }
+    },
+
+    // Marketplace
+    marketplace: {
+      title: 'Soluciones Partners',
+      subtitle: 'Integraciones de nivel empresarial diseñadas para escalar tus operaciones agrícolas',
+      learnMoreButton: 'Conocer Más',
+      picking: {
+        title: 'Picking y Operaciones',
+        category: 'Picking y Operaciones',
+        features: [
+          'Reconocimiento de frutas por IA',
+          'Robots de cosecha automatizados',
+          'Coordinación de tareas en tiempo real',
+          'Integración de seguimiento de rendimiento'
+        ]
+      },
+      gps: {
+        title: 'Monitoreo de Flota GPS',
+        category: 'Monitoreo de Flota GPS',
+        features: [
+          'Rastreo GPS en tiempo real',
+          'Optimización de rutas',
+          'Medición de consumo de gasolina',
+          'Panel de gestión de flota'
+        ]
+      },
+      yield: {
+        title: 'Inteligencia de Rendimiento',
+        category: 'Inteligencia de Rendimiento',
+        features: [
+          'Pronóstico de rendimiento con ML',
+          'Herramientas de planificación de cosecha',
+          'Integración de datos de sensores',
+          'Análisis predictivo'
+        ]
+      },
+      becomePartner: {
+        title: 'Únete como Partner',
+        description: 'Únete a nuestro ecosistema de proveedores de tecnología agrícola. Integra tus soluciones con AgroMonitor y alcanza miles de agricultores en todo el mundo.',
+        ctaButton: 'Aplicar Ahora'
       }
     },
 

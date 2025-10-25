@@ -88,64 +88,90 @@ export default function AgroMonitor() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        <motion.div variants={itemVariants} className="agromonitor-header">
+        {/* Header Section */}
+        <motion.div variants={itemVariants} className="agromonitor-header-serious">
+          <div className="agromonitor-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>{language === 'en' ? 'PLATFORM' : 'PLATAFORMA'}</span>
+          </div>
           <h2>{t.title}</h2>
-          <p className="section-subtitle">
+          <p className="agromonitor-subtitle-serious">
             {t.subtitle}
-          </p>
-          <p className="agromonitor-description">
-            {t.description}
           </p>
         </motion.div>
 
-        <div className="agromonitor-two-column">
-          {/* Left Column: Agent Cards + Platform Features */}
-          <div className="agromonitor-left">
-            <motion.div
-              className="agents-grid-professional"
-              variants={containerVariants}
-            >
-              {agentExamples.map((agent, index) => (
-                <motion.div
-                  key={index}
-                  className="agent-card-professional"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="agent-icon-professional" style={{ color: agent.color }}>
-                    {agent.icon}
-                  </div>
-                  <h4>{agent.title}</h4>
-                  <p>{agent.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="agromonitor-platform-features">
-              <div className="platform-features-grid">
-                <div className="feature-card-professional">
-                  <img src="/AICopilot.png" alt={t.platform.aiCopilot} />
-                  <h4>{t.platform.aiCopilot}</h4>
-                </div>
-                <div className="feature-card-professional">
-                  <img src="/Task.png" alt={t.platform.taskManagement} />
-                  <h4>{t.platform.taskManagement}</h4>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column: Main Visual */}
-          <motion.div variants={itemVariants} className="agromonitor-right">
-            <div className="agromonitor-main-visual">
+        {/* Main Content: Image + Description */}
+        <div className="agromonitor-main-layout">
+          <motion.div variants={itemVariants} className="agromonitor-image-section">
+            <div className="agromonitor-image-wrapper">
               <img
-                src="/AgromonitorViewPC.png"
+                src="/agromonitor.png"
                 alt="AgroMonitor Dashboard"
-                className="agromonitor-screenshot"
+                className="agromonitor-dashboard-image"
               />
             </div>
           </motion.div>
+
+          <motion.div variants={itemVariants} className="agromonitor-description-section">
+            <p className="agromonitor-main-description">
+              {t.description}
+            </p>
+
+            <div className="agromonitor-stats">
+              <div className="stat-item">
+                <div className="stat-number">100%</div>
+                <div className="stat-label">{language === 'en' ? 'Hardware Agnostic' : 'Hardware Agnóstico'}</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">24/7</div>
+                <div className="stat-label">{language === 'en' ? 'Real-time Monitoring' : 'Monitoreo en Tiempo Real'}</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">AI</div>
+                <div className="stat-label">{language === 'en' ? 'Powered Agents' : 'Agentes Potenciados'}</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Agent Types Grid */}
+        <motion.div variants={itemVariants} className="agromonitor-agents-section">
+          <h3 className="agents-section-title">{language === 'en' ? 'Connected Agent Types' : 'Tipos de Agentes Conectados'}</h3>
+          <div className="agents-grid-serious">
+            {agentExamples.map((agent, index) => (
+              <motion.div
+                key={index}
+                className="agent-card-serious"
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+              >
+                <div className="agent-icon-serious" style={{ borderColor: agent.color }}>
+                  {agent.icon}
+                </div>
+                <h4>{agent.title}</h4>
+                <p>{agent.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Platform Features */}
+        <motion.div variants={itemVariants} className="agromonitor-features-section">
+          <h3 className="features-section-title">{language === 'en' ? 'Platform Capabilities' : 'Capacidades de la Plataforma'}</h3>
+          <div className="platform-features-serious">
+            <div className="feature-card-serious">
+              <img src="/AICopilot.png" alt={t.platform.aiCopilot} />
+              <h4>{t.platform.aiCopilot}</h4>
+            </div>
+            <div className="feature-card-serious">
+              <img src="/Task.png" alt={t.platform.taskManagement} />
+              <h4>{t.platform.taskManagement}</h4>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   )

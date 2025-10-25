@@ -6,6 +6,7 @@ import { PackageProvider } from './contexts/PackageContext'
 import SectorSelector from './components/SectorSelector'
 import AgriculturePage from './pages/AgriculturePage'
 import IndustryPage from './pages/IndustryPage'
+import MarketplacePage from './pages/MarketplacePage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<SectorSelector />} />
               <Route path="/agriculture" element={<AgriculturePage />} />
               <Route path="/industry" element={<IndustryPage />} />
+              <Route path="/marketplace" element={<MarketplacePage />} />
             </Routes>
           </div>
         </Router>
